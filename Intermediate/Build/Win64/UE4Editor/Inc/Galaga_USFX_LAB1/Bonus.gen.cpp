@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeBonus() {}
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_ABonus();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX_LAB1();
+	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
 	void ABonus::StaticRegisterNativesABonus()
 	{
@@ -31,6 +32,11 @@ void EmptyLinkFunctionForGeneratedCodeBonus() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BonusMesh_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BonusMesh;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -44,6 +50,17 @@ void EmptyLinkFunctionForGeneratedCodeBonus() {}
 		{ "ModuleRelativePath", "Bonus.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABonus_Statics::NewProp_BonusMesh_MetaData[] = {
+		{ "Category", "Bonus" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Bonus.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABonus_Statics::NewProp_BonusMesh = { "BonusMesh", nullptr, (EPropertyFlags)0x0010000000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABonus, BonusMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABonus_Statics::NewProp_BonusMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABonus_Statics::NewProp_BonusMesh_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABonus_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABonus_Statics::NewProp_BonusMesh,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABonus_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABonus>::IsAbstract,
 	};
@@ -53,11 +70,11 @@ void EmptyLinkFunctionForGeneratedCodeBonus() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ABonus_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ABonus_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ABonus_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ABonus_Statics::Class_MetaDataParams))
@@ -71,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodeBonus() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABonus, 3968194596);
+	IMPLEMENT_CLASS(ABonus, 2609784765);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<ABonus>()
 	{
 		return ABonus::StaticClass();

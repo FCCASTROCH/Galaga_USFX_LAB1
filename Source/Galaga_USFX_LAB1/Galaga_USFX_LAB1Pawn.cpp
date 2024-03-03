@@ -36,7 +36,7 @@ AGalaga_USFX_LAB1Pawn::AGalaga_USFX_LAB1Pawn()
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->SetUsingAbsoluteRotation(true); // Don't want arm to rotate when ship does
 	CameraBoom->TargetArmLength = 1200.f;
-	CameraBoom->SetRelativeRotation(FRotator(-80.f, 0.f, 0.f));
+	CameraBoom->SetRelativeRotation(FRotator(-120.f, 0.f, 0.f));
 	CameraBoom->bDoCollisionTest = false; // Don't want to pull camera in when it collides with level
 
 	// Create a camera...
@@ -78,15 +78,15 @@ void AGalaga_USFX_LAB1Pawn::Tick(float DeltaSeconds)
 	// If non-zero size, move this actor
 	if (Movement.SizeSquared() > 0.0f)
 	{
-		const FRotator NewRotation = Movement.Rotation();
+		
 		FHitResult Hit(1.f);
-		RootComponent->MoveComponent(Movement, NewRotation, true, &Hit);
+		RootComponent->MoveComponent(Movement, RootComponent->GetComponentQuat(), true, &Hit);
 		
 		if (Hit.IsValidBlockingHit())
 		{
 			const FVector Normal2D = Hit.Normal.GetSafeNormal2D();
 			const FVector Deflection = FVector::VectorPlaneProject(Movement, Normal2D) * (1.f - Hit.Time);
-			RootComponent->MoveComponent(Deflection, NewRotation, true);
+			RootComponent->MoveComponent(Deflection, RootComponent->GetComponentQuat(), true);
 		}
 	}
 	
@@ -96,40 +96,38 @@ void AGalaga_USFX_LAB1Pawn::Tick(float DeltaSeconds)
 	const FVector FireDirection = FVector(FireForwardValue, FireRightValue, 0.f);
 
 	// Try and fire a shot
-	FireShot(FireDirection);
+	FireShot();
 }
-void AGalaga_USFX_LAB1Pawn::FireShot(FVector FireDirection)
+void AGalaga_USFX_LAB1Pawn::FireShot()
 {
-
 	// If it's ok to fire again
-	if (bCanFire == true)
+	if (bCanFire)
 	{
-		// If we are pressing fire stick in a direction
-		if (FireDirection.SizeSquared() > 0.0f)
+		// Calculate fire direction based on actor's rotation (only fire forward)
+		const FRotator FireRotation = GetActorRotation();
+		const FVector FireDirection = FireRotation.Vector();
+
+		// Spawn projectile at an offset from this pawn
+		const FVector SpawnLocation = GetActorLocation() + FireDirection * GunOffset.X;
+
+		UWorld* const World = GetWorld();
+		if (World != nullptr)
 		{
-			const FRotator FireRotation = FireDirection.Rotation();
-			// Spawn projectile at an offset from this pawn
-			const FVector SpawnLocation = GetActorLocation() + FireRotation.RotateVector(GunOffset);
+			// spawn the projectile
+			World->SpawnActor<AGalaga_USFX_LAB1Projectile>(SpawnLocation, FireRotation);
+		}
 
-			UWorld* const World = GetWorld();
-			if (World != nullptr)
-			{
-				// spawn the projectile
-				World->SpawnActor<AGalaga_USFX_LAB1Projectile>(SpawnLocation, FireRotation);
-			}
+		// Disable firing temporarily
+		bCanFire = false;
+		World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &AGalaga_USFX_LAB1Pawn::ShotTimerExpired, FireRate);
 
-			bCanFire = false;
-			World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &AGalaga_USFX_LAB1Pawn::ShotTimerExpired, FireRate);
-
-			// try and play the sound if specified
-			if (FireSound != nullptr)
-			{
-				UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
-			}
-
-			bCanFire = false;
+		// try and play the sound if specified
+		if (FireSound != nullptr)
+		{
+			UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
 		}
 	}
+	
 }
 
 void AGalaga_USFX_LAB1Pawn::ShotTimerExpired()

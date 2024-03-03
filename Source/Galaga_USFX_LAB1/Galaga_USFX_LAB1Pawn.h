@@ -27,9 +27,9 @@ public:
 	AGalaga_USFX_LAB1Pawn();
 
 	/** Offset from the ships location to spawn projectiles */
-	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite )
+	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
 	FVector GunOffset;
-	
+
 	/* How fast the weapon will fire */
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
 	float FireRate;
@@ -48,7 +48,7 @@ public:
 	// End Actor Interface
 
 	/* Fire a shot in the specified direction */
-	void FireShot(FVector FireDirection);
+	void FireShot();
 
 	/* Handler for the fire timer expiry */
 	void ShotTimerExpired();

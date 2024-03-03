@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeProyectil() {}
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_AProyectil();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX_LAB1();
+	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
 	void AProyectil::StaticRegisterNativesAProyectil()
 	{
@@ -31,6 +32,11 @@ void EmptyLinkFunctionForGeneratedCodeProyectil() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProyectilMesh_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ProyectilMesh;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -44,6 +50,18 @@ void EmptyLinkFunctionForGeneratedCodeProyectil() {}
 		{ "ModuleRelativePath", "Proyectil.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AProyectil_Statics::NewProp_ProyectilMesh_MetaData[] = {
+		{ "AllowPrivate", "true" },
+		{ "Category", "Projectile" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Proyectil.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProyectil_Statics::NewProp_ProyectilMesh = { "ProyectilMesh", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AProyectil, ProyectilMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AProyectil_Statics::NewProp_ProyectilMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AProyectil_Statics::NewProp_ProyectilMesh_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AProyectil_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProyectil_Statics::NewProp_ProyectilMesh,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AProyectil_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AProyectil>::IsAbstract,
 	};
@@ -53,11 +71,11 @@ void EmptyLinkFunctionForGeneratedCodeProyectil() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_AProyectil_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_AProyectil_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AProyectil_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AProyectil_Statics::Class_MetaDataParams))
@@ -71,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodeProyectil() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AProyectil, 2681486609);
+	IMPLEMENT_CLASS(AProyectil, 2255809012);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<AProyectil>()
 	{
 		return AProyectil::StaticClass();

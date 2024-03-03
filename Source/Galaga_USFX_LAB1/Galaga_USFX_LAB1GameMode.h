@@ -6,6 +6,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "Galaga_USFX_LAB1GameMode.generated.h"
 class ANaveEnemigo;
+class ANave;
 UCLASS(MinimalAPI)
 class AGalaga_USFX_LAB1GameMode : public AGameModeBase
 {
@@ -17,6 +18,7 @@ public:
 		virtual void BeginPlay() override;
 public:
 	ANaveEnemigo* NaveEnemigo1;
+	ANave* NaveJugador1;
 };
 
 
