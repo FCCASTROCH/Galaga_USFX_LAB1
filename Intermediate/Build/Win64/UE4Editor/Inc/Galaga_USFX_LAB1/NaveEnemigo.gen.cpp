@@ -77,7 +77,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigo() {}
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigo_Statics::PropPointers),
 		0,
-		0x009000A4u,
+		0x009000A5u,
 		METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigo_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigo_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_ANaveEnemigo()
@@ -89,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigo, 3892140927);
+	IMPLEMENT_CLASS(ANaveEnemigo, 2501127831);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<ANaveEnemigo>()
 	{
 		return ANaveEnemigo::StaticClass();

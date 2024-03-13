@@ -19,9 +19,20 @@ public:
 	UStaticMeshComponent* NaveMesh;
 private:
 	FString Nombre;
-	float velocidad;
+	float velocidad;//queda
+	float danio;
+	float tiempodisparo;
+	FVector posicion;
+	float resistencia;
+	int trayectoria;
+	int tipo;
+	int capacidad;
+	int capPasajero;
+	float experiencia;
+
+
 	float disparo;
-	float movimiento;
+	float movimiento;//
 public:
 	FORCEINLINE FString GetNombre() const { return Nombre; }
 	FORCEINLINE float GetVelocidad() const { return velocidad; }
@@ -34,7 +45,7 @@ public:
 	FORCEINLINE void SetMovimiento(float mov) { movimiento = mov; }
 protected:
 	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	virtual void BeginPlay() override; //override significa que sta sobre escrito
 
 public:	
 	// Called every frame
