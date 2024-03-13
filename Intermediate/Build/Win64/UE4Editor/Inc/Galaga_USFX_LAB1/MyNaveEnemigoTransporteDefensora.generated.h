@@ -36,7 +36,7 @@ public: \
 
 #define Galaga_USFX_LAB1_Source_Galaga_USFX_LAB1_MyNaveEnemigoTransporteDefensora_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AMyNaveEnemigoTransporteDefensora(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API AMyNaveEnemigoTransporteDefensora(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMyNaveEnemigoTransporteDefensora) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AMyNaveEnemigoTransporteDefensora); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AMyNaveEnemigoTransporteDefensora); \
@@ -48,8 +48,6 @@ public:
 
 
 #define Galaga_USFX_LAB1_Source_Galaga_USFX_LAB1_MyNaveEnemigoTransporteDefensora_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AMyNaveEnemigoTransporteDefensora() { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AMyNaveEnemigoTransporteDefensora(AMyNaveEnemigoTransporteDefensora&&); \

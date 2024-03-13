@@ -3,3 +3,26 @@
 
 #include "NaveEnemigoKamikaseExplosivo.h"
 
+ANaveEnemigoKamikaseExplosivo::ANaveEnemigoKamikaseExplosivo()
+{
+}
+
+void ANaveEnemigoKamikaseExplosivo::Mover(float DeltaTime)
+{
+}
+
+void ANaveEnemigoKamikaseExplosivo::Disparar()
+{
+}
+
+void ANaveEnemigoKamikaseExplosivo::Destruirse()
+{
+}
+
+void ANaveEnemigoKamikaseExplosivo::Escapar()
+{
+}
+
+void ANaveEnemigoKamikaseExplosivo::Atacar()
+{
+}

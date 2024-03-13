@@ -13,6 +13,12 @@ UCLASS()
 class GALAGA_USFX_LAB1_API ANaveEnemigoReabastecimiento : public ANaveEnemigo
 {
 	GENERATED_BODY()
-protected:
-	virtual void mover(float DeltaTime);
+public:
+	ANaveEnemigoReabastecimiento();
+	~ANaveEnemigoReabastecimiento();
+	virtual void Mover(float DeltaTime);
+	virtual void Disparar();
+	virtual void Destruirse();
+	virtual void Escapar();
+	virtual void Atacar();
 };

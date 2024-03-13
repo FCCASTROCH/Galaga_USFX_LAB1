@@ -36,7 +36,7 @@ public: \
 
 #define Galaga_USFX_LAB1_Source_Galaga_USFX_LAB1_NaveEnemigoNodrizaDisparadora_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ANaveEnemigoNodrizaDisparadora(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ANaveEnemigoNodrizaDisparadora(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ANaveEnemigoNodrizaDisparadora) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ANaveEnemigoNodrizaDisparadora); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ANaveEnemigoNodrizaDisparadora); \
@@ -48,8 +48,6 @@ public:
 
 
 #define Galaga_USFX_LAB1_Source_Galaga_USFX_LAB1_NaveEnemigoNodrizaDisparadora_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ANaveEnemigoNodrizaDisparadora() { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ANaveEnemigoNodrizaDisparadora(ANaveEnemigoNodrizaDisparadora&&); \

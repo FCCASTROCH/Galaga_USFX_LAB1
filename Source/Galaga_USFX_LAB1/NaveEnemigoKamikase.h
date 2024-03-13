@@ -14,6 +14,11 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoKamikase : public ANaveEnemigo
 {
 	GENERATED_BODY()
 protected:
-	virtual void mover(float DeltaTime) ;
+	ANaveEnemigoKamikase();
+	virtual void Mover(float DeltaTime) ;
+	virtual void Disparar();
+	virtual void Destruirse();
+	virtual void Escapar();
+	virtual void Atacar();
 	
 };

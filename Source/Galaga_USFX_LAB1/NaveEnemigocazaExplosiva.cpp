@@ -3,3 +3,20 @@
 
 #include "NaveEnemigocazaExplosiva.h"
 
+ANaveEnemigocazaExplosiva::ANaveEnemigocazaExplosiva()
+{
+}
+
+void ANaveEnemigocazaExplosiva::Mover()
+{
+}
+
+void ANaveEnemigocazaExplosiva::Destruirse()
+{
+
+}
+
+void ANaveEnemigocazaExplosiva::Explotar()
+{
+}
+

@@ -13,3 +13,13 @@ void ANaveEnemigocaza::Disparar()
 {
 
 }
+
+void ANaveEnemigocaza::Destruirse()
+{
+}
+void ANaveEnemigocaza::Escapar()
+{
+}
+void ANaveEnemigocaza::Atacar()
+{
+}

@@ -3,7 +3,27 @@
 
 #include "NaveEnemigoReabastecimiento.h"
 
-void ANaveEnemigoReabastecimiento::mover(float DeltaTime)
+ANaveEnemigoReabastecimiento::ANaveEnemigoReabastecimiento()
+{
+}
+ANaveEnemigoReabastecimiento::~ANaveEnemigoReabastecimiento()
+{
+}
+
+void ANaveEnemigoReabastecimiento::Mover(float DeltaTime)
 {
 
+}
+
+void ANaveEnemigoReabastecimiento::Disparar()
+{
+}
+void ANaveEnemigoReabastecimiento::Destruirse()
+{
+}
+void ANaveEnemigoReabastecimiento::Escapar()
+{
+}
+void ANaveEnemigoReabastecimiento::Atacar()
+{
 }

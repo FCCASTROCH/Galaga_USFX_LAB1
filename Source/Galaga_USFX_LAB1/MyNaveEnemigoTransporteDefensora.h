@@ -13,5 +13,11 @@ UCLASS()
 class GALAGA_USFX_LAB1_API AMyNaveEnemigoTransporteDefensora : public ANaveEnemigoTransporte
 {
 	GENERATED_BODY()
-	
+public:
+	AMyNaveEnemigoTransporteDefensora();
+	virtual void Mover(float DeltaTime)override;
+	virtual void Disparar()override;
+	virtual void Destruirse()override;
+	virtual void Escapar()override;
+	virtual void Atacar()override;
 };

@@ -3,3 +3,26 @@
 
 #include "NaveEnemigoEspiaSigiloso.h"
 
+ANaveEnemigoEspiaSigiloso::ANaveEnemigoEspiaSigiloso()
+{
+}
+
+void ANaveEnemigoEspiaSigiloso::Mover(float DeltaTime)
+{
+}
+
+void ANaveEnemigoEspiaSigiloso::Disparar()
+{
+}
+
+void ANaveEnemigoEspiaSigiloso::Destruirse()
+{
+}
+
+void ANaveEnemigoEspiaSigiloso::Escapar()
+{
+}
+
+void ANaveEnemigoEspiaSigiloso::Atacar()
+{
+}

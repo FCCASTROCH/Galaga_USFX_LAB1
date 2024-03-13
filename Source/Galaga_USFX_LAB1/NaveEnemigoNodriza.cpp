@@ -3,6 +3,28 @@
 
 #include "NaveEnemigoNodriza.h"
 
-void ANaveEnemigoNodriza::mover(float DeltaTime)
+ANaveEnemigoNodriza::ANaveEnemigoNodriza()
 {
+}
+
+ANaveEnemigoNodriza::~ANaveEnemigoNodriza()
+{
+
+}
+
+void ANaveEnemigoNodriza::Mover(float DeltaTime)
+{
+}
+
+void ANaveEnemigoNodriza::Disparar()
+{
+}
+void ANaveEnemigoNodriza::Atacar() {
+
+}
+void ANaveEnemigoNodriza::Destruirse() {
+
+}
+void ANaveEnemigoNodriza::Escapar() {
+
 }

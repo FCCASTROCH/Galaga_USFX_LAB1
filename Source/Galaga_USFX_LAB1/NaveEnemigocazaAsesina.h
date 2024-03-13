@@ -13,5 +13,16 @@ UCLASS()
 class GALAGA_USFX_LAB1_API ANaveEnemigocazaAsesina : public ANaveEnemigocaza
 {
 	GENERATED_BODY()
+public:
+	ANaveEnemigocazaAsesina();
+	virtual void Atacar() override;
+	virtual void Mover() override; 
+    virtual void Disparar() override;
+	virtual void Destruirse() override;
+
+	//metodos propios 
+	void AtaqueEspecial();
 	
+
+
 };

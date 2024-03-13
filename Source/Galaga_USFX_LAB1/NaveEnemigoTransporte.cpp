@@ -4,10 +4,30 @@
 #include "NaveEnemigoTransporte.h"
 
 
-void ANaveEnemigoTransporte::mover(float DeltaTime)
+ANaveEnemigoTransporte::ANaveEnemigoTransporte()
 {
 }
-void ANaveEnemigoTransporte::disparar()
+
+ANaveEnemigoTransporte::~ANaveEnemigoTransporte()
+{
+}
+
+void ANaveEnemigoTransporte::Mover(float DeltaTime)
+{
+}
+void ANaveEnemigoTransporte::Disparar()
 {
 	//disparar
+}
+
+void ANaveEnemigoTransporte::Destruirse()
+{
+}
+
+void ANaveEnemigoTransporte::Escapar()
+{
+}
+
+void ANaveEnemigoTransporte::Atacar()
+{
 }

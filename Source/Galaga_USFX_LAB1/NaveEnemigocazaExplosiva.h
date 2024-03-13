@@ -14,4 +14,10 @@ class GALAGA_USFX_LAB1_API ANaveEnemigocazaExplosiva : public ANaveEnemigocaza
 {
 	GENERATED_BODY()
 	
+	public:
+		ANaveEnemigocazaExplosiva();
+		virtual void Mover() override; //Sobrescribir los metodos
+	    virtual void Destruirse() override;
+		//metodo propio
+		void Explotar();
 };
