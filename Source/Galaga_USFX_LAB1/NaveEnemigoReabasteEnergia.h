@@ -14,6 +14,9 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoReabasteEnergia : public ANaveEnemigoReab
 {
 	GENERATED_BODY()
 public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* MeshNaveEnemigoReabasteEnergia;
+
 	ANaveEnemigoReabasteEnergia();
 	virtual void Mover(float DeltaTime)override;
 	virtual void Disparar()override;

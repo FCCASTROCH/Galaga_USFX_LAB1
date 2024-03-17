@@ -4,27 +4,41 @@
 #include "Galaga_USFX_LAB1Pawn.h"
 #include "NaveEnemigo.h"
 #include "Nave.h"
+#include "NaveEnemigoTransporte.h"
+#include "NaveEnemigocaza.h"
+
 AGalaga_USFX_LAB1GameMode::AGalaga_USFX_LAB1GameMode()
 {
 	// set default pawn class to our character class
+	PrimaryActorTick.bCanEverTick = true;
 	DefaultPawnClass = AGalaga_USFX_LAB1Pawn::StaticClass();
 	NaveEnemigo1 = 0;
 }
 void AGalaga_USFX_LAB1GameMode::BeginPlay()
 {
+    Super::BeginPlay();
+    // Set the game state to playing
+    FVector UbicacionInicialNaveEnemigoCaza = FVector(1600.0f, -500.0f, 250.0f);
 
-	Super::BeginPlay();
+    FRotator Rotacion = FRotator(0.0f, 0.0f, 0.0f);
+    UWorld* const World = GetWorld();
 
-	FVector ubicacionNave = FVector(-960.0f, 50.0f, 250.0f);
-	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
+    if (World != nullptr)
+    {
+        for (int32 i = 0; i < 2; i++)
+        {
+            // Calcula la ubicación para cada nave enemiga caza
+            FVector UbicacionNaveEnemigoCaza = FVector(UbicacionInicialNaveEnemigoCaza.X, UbicacionInicialNaveEnemigoCaza.Y + i * 300.0f, UbicacionInicialNaveEnemigoCaza.Z);
+            // Spawnea la nave enemiga caza en la ubicación calculada
+            ANaveEnemigocaza* NaveEnemigaCazaTemporal = World->SpawnActor<ANaveEnemigocaza>(UbicacionNaveEnemigoCaza, Rotacion);
 
-	UWorld* const World = GetWorld();
-	if (World != nullptr)
-	{
-		// spawn the projectile
-		NaveEnemigo1 = World->SpawnActor<ANaveEnemigo>(ubicacionNave, rotacionNave);
-		NaveJugador1 = World->SpawnActor<ANave>(FVector(-400.0f,50.0f,250.0f), FRotator(0.0f, 0.0f, 0.0f));
-	}
-
+        
+        }
+    }
+}
+void AGalaga_USFX_LAB1GameMode::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	
 }
 

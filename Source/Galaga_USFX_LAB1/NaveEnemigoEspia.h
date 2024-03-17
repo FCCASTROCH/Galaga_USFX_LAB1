@@ -14,6 +14,10 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoEspia : public ANaveEnemigo
 {
 	GENERATED_BODY()
 public:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* MeshNaveEnemigoEspia;
+
 	ANaveEnemigoEspia();
 	~ANaveEnemigoEspia();
 	virtual void Mover(float DeltaTime);

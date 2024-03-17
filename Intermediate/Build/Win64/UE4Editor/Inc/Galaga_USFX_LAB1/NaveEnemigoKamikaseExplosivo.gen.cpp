@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigoKamikaseExplosivo() {}
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo();
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_ANaveEnemigoKamikase();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX_LAB1();
+	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
 	void ANaveEnemigoKamikaseExplosivo::StaticRegisterNativesANaveEnemigoKamikaseExplosivo()
 	{
@@ -31,6 +32,11 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigoKamikaseExplosivo() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MeshNaveEnemigoKamikaseExplosivo_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MeshNaveEnemigoKamikaseExplosivo;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -45,6 +51,18 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigoKamikaseExplosivo() {}
 		{ "ModuleRelativePath", "NaveEnemigoKamikaseExplosivo.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::NewProp_MeshNaveEnemigoKamikaseExplosivo_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Projectile" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "NaveEnemigoKamikaseExplosivo.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::NewProp_MeshNaveEnemigoKamikaseExplosivo = { "MeshNaveEnemigoKamikaseExplosivo", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANaveEnemigoKamikaseExplosivo, MeshNaveEnemigoKamikaseExplosivo), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::NewProp_MeshNaveEnemigoKamikaseExplosivo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::NewProp_MeshNaveEnemigoKamikaseExplosivo_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::NewProp_MeshNaveEnemigoKamikaseExplosivo,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANaveEnemigoKamikaseExplosivo>::IsAbstract,
 	};
@@ -54,11 +72,11 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigoKamikaseExplosivo() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigoKamikaseExplosivo_Statics::Class_MetaDataParams))
@@ -72,7 +90,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigoKamikaseExplosivo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigoKamikaseExplosivo, 3797531406);
+	IMPLEMENT_CLASS(ANaveEnemigoKamikaseExplosivo, 2241898826);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<ANaveEnemigoKamikaseExplosivo>()
 	{
 		return ANaveEnemigoKamikaseExplosivo::StaticClass();

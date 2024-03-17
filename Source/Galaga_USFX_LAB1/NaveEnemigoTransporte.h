@@ -13,7 +13,15 @@ UCLASS()
 class GALAGA_USFX_LAB1_API ANaveEnemigoTransporte : public ANaveEnemigo
 {
 	GENERATED_BODY()
+
+private:
+	float capacidadCargaPeso;
+	float capacidadCargaVolumen;
+
 public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* MeshNaveEnemigoTransporte;
+
 	ANaveEnemigoTransporte();
 	~ANaveEnemigoTransporte();
 	virtual void Mover(float DeltaTime);
@@ -21,4 +29,10 @@ public:
 	virtual void Destruirse();
 	virtual void Escapar();
 	virtual void Atacar();
+
+	FORCEINLINE float GetCapacidadCargaPeso() const { return capacidadCargaPeso; }
+	FORCEINLINE void SetCapacidadCargaPeso(float capacidad) { capacidadCargaPeso = capacidad; }
+	FORCEINLINE float GetCapacidadCargaVolumen() const { return capacidadCargaVolumen; }
+	FORCEINLINE void SetCapacidadCargaVolumen(float capacidad) { capacidadCargaVolumen = capacidad; }
+
 };

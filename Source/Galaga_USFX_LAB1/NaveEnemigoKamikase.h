@@ -14,6 +14,9 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoKamikase : public ANaveEnemigo
 {
 	GENERATED_BODY()
 protected:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* MeshNaveEnemigoKamikase;
 	ANaveEnemigoKamikase();
 	virtual void Mover(float DeltaTime) ;
 	virtual void Disparar();

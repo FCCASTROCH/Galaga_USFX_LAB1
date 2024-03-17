@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigoReabastecimiento() {}
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_ANaveEnemigoReabastecimiento();
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_ANaveEnemigo();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX_LAB1();
+	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
 	void ANaveEnemigoReabastecimiento::StaticRegisterNativesANaveEnemigoReabastecimiento()
 	{
@@ -31,6 +32,11 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigoReabastecimiento() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MeshNaveEnemigoReabastecimiento_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MeshNaveEnemigoReabastecimiento;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -45,6 +51,18 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigoReabastecimiento() {}
 		{ "ModuleRelativePath", "NaveEnemigoReabastecimiento.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::NewProp_MeshNaveEnemigoReabastecimiento_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Projectile" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "NaveEnemigoReabastecimiento.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::NewProp_MeshNaveEnemigoReabastecimiento = { "MeshNaveEnemigoReabastecimiento", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANaveEnemigoReabastecimiento, MeshNaveEnemigoReabastecimiento), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::NewProp_MeshNaveEnemigoReabastecimiento_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::NewProp_MeshNaveEnemigoReabastecimiento_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::NewProp_MeshNaveEnemigoReabastecimiento,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANaveEnemigoReabastecimiento>::IsAbstract,
 	};
@@ -54,11 +72,11 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigoReabastecimiento() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigoReabastecimiento_Statics::Class_MetaDataParams))
@@ -72,7 +90,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigoReabastecimiento() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigoReabastecimiento, 3072267557);
+	IMPLEMENT_CLASS(ANaveEnemigoReabastecimiento, 3216210781);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<ANaveEnemigoReabastecimiento>()
 	{
 		return ANaveEnemigoReabastecimiento::StaticClass();

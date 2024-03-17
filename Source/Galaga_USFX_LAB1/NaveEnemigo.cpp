@@ -19,6 +19,7 @@ ANaveEnemigo::ANaveEnemigo()
 	NaveEnemigoMesh->SetStaticMesh(ShipMesh.Object);
 	NaveEnemigoMesh->SetupAttachment(RootComponent);
 	RootComponent = NaveEnemigoMesh;
+	velocidad = 1;
 }
 
 

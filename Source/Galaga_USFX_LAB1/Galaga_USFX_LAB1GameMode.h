@@ -7,6 +7,9 @@
 #include "Galaga_USFX_LAB1GameMode.generated.h"
 class ANaveEnemigo;
 class ANave;
+class ANaveEnemigoTransporte;
+class ANaveEnemigocaza;
+
 UCLASS(MinimalAPI)
 class AGalaga_USFX_LAB1GameMode : public AGameModeBase
 {
@@ -19,6 +22,12 @@ public:
 public:
 	ANaveEnemigo* NaveEnemigo1;
 	ANave* NaveJugador1;
+	ANaveEnemigoTransporte* NaveEnemigaTransporte01;
+	ANaveEnemigocaza* NaveEnemigaCaza01;
+
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 };
 
 

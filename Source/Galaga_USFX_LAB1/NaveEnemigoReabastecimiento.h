@@ -14,6 +14,10 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoReabastecimiento : public ANaveEnemigo
 {
 	GENERATED_BODY()
 public:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* MeshNaveEnemigoReabastecimiento;
+
 	ANaveEnemigoReabastecimiento();
 	~ANaveEnemigoReabastecimiento();
 	virtual void Mover(float DeltaTime);

@@ -13,7 +13,11 @@ UCLASS()
 class GALAGA_USFX_LAB1_API ANaveEnemigoNodriza : public ANaveEnemigo
 {
 	GENERATED_BODY()
-protected:
+	public:
+
+		UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+		UStaticMeshComponent* MeshNaveEnemigoNodriza;
+
 	ANaveEnemigoNodriza();
 	~ANaveEnemigoNodriza();
 	virtual void Mover(float DeltaTime);

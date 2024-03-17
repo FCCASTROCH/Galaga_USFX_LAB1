@@ -11,20 +11,35 @@
  //crear nave trransporte
 
  */
+
+
 UCLASS()
 class GALAGA_USFX_LAB1_API ANaveEnemigocaza : public ANaveEnemigo
 {
 	GENERATED_BODY()
+			
 private:
 	int cantidadBombas;
 public:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* MeshNaveEnemigocaza;
+
+        ANaveEnemigocaza();	
+		~ANaveEnemigocaza();
+
+
 	FORCEINLINE int GetCantidadBombas() const { return cantidadBombas; }
 	FORCEINLINE void SetCantidadBombas(int _cantidadBombas) { cantidadBombas = _cantidadBombas; }
 
-
 protected:
-
-	virtual void Mover();
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+protected:
+	virtual void Mover(float DeltaTime);
 	virtual void Disparar();
 	virtual void Destruirse();
 	virtual void Escapar();

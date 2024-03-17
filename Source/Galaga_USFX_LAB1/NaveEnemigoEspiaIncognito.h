@@ -15,10 +15,13 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoEspiaIncognito : public ANaveEnemigoEspia
 	GENERATED_BODY()
 public:
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* MeshNaveIncognito;
+
 	ANaveEnemigoEspiaIncognito();
 	//metodos sobreescritos
 
-	virtual void Mover(float deltaTime) override;
+	virtual void Mover(float DeltaTime) override;
 	virtual void Disparar() override;
 	virtual void Destruirse() override;
 	virtual void Escapar()override;
