@@ -9,10 +9,9 @@ ANaveEnemigoTransporteExplosivos::ANaveEnemigoTransporteExplosivos()
 {
 	PrimaryActorTick.bCanEverTick = true;
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveEnemigoTransporteExplosivos1(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave Exp"));
+	//NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave Exp"));
 	NaveEnemigoMesh->SetStaticMesh(MeshNaveEnemigoTransporteExplosivos1.Object);
-	NaveEnemigoMesh->SetupAttachment(RootComponent);
-	RootComponent = NaveEnemigoMesh;
+	
 }
 
 void ANaveEnemigoTransporteExplosivos::Mover(float DeltaTime)

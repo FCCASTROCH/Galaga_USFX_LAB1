@@ -8,11 +8,10 @@
 ANaveEnemigocazaAsesina::ANaveEnemigocazaAsesina()
 {
 		PrimaryActorTick.bCanEverTick = true;
-		static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveAsesina1(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-		NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh17"));
+		static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveAsesina1(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cylinder.Shape_Cylinder'"));
+		//NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 		NaveEnemigoMesh->SetStaticMesh(MeshNaveAsesina1.Object);
-		NaveEnemigoMesh->SetupAttachment(RootComponent);
-		RootComponent = NaveEnemigoMesh;
+		
 }
 
 void ANaveEnemigocazaAsesina::Atacar()

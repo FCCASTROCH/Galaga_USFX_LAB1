@@ -24,8 +24,12 @@ public:
 	ANave* NaveJugador1;
 	ANaveEnemigoTransporte* NaveEnemigaTransporte01;
 	ANaveEnemigocaza* NaveEnemigaCaza01;
-
+private:
+	int tiempotranscurrido;
 public:
+	TArray<ANaveEnemigocaza*> TANavesEnemigasCaza;
+//	FString GetUniqueNameForNave(); // Declaración de la función aquí
+	//TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 };

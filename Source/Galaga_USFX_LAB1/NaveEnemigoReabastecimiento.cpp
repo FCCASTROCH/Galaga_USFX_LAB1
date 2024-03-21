@@ -8,12 +8,10 @@
 ANaveEnemigoReabastecimiento::ANaveEnemigoReabastecimiento()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveEnemigoReabastecimiento1(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh4"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveEnemigoReabastecimiento1(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'"));
+	//NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh4"));
 	NaveEnemigoMesh->SetStaticMesh(MeshNaveEnemigoReabastecimiento1.Object);
-	NaveEnemigoMesh->SetupAttachment(RootComponent);
-	RootComponent = NaveEnemigoMesh;
-}
+	}
 ANaveEnemigoReabastecimiento::~ANaveEnemigoReabastecimiento()
 {
 }

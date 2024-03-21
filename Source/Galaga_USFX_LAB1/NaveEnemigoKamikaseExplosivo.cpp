@@ -8,11 +8,10 @@
 ANaveEnemigoKamikaseExplosivo::ANaveEnemigoKamikaseExplosivo()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveExplosiv(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh10"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveExplosiv(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Trim_90_Out.Shape_Trim_90_Out'"));
+	//NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh10"));
 	NaveEnemigoMesh->SetStaticMesh(MeshNaveExplosiv.Object);
-	NaveEnemigoMesh->SetupAttachment(RootComponent);
-	RootComponent = NaveEnemigoMesh;
+
 }
 
 void ANaveEnemigoKamikaseExplosivo::Mover(float DeltaTime)

@@ -8,11 +8,10 @@
 ANaveEnemigoKamikaseAgil::ANaveEnemigoKamikaseAgil()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveKA(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh11"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveKA(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
+	//NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh11"));
 	NaveEnemigoMesh->SetStaticMesh(MeshNaveKA.Object);
-	NaveEnemigoMesh->SetupAttachment(RootComponent);
-	RootComponent = NaveEnemigoMesh;
+	
 }
 
 void ANaveEnemigoKamikaseAgil::Mover(float DeltaTime)

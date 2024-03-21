@@ -8,11 +8,10 @@
 ANaveEnemigoNodrizaReparadora::ANaveEnemigoNodrizaReparadora()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveEnemigoNodrizaReparadora1(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh5"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveEnemigoNodrizaReparadora1(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
+	//NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh5"));
 	NaveEnemigoMesh->SetStaticMesh(MeshNaveEnemigoNodrizaReparadora1.Object);
-	NaveEnemigoMesh->SetupAttachment(RootComponent);
-	RootComponent = NaveEnemigoMesh;
+	
 }
 
 void ANaveEnemigoNodrizaReparadora::Mover(float DeltaTime)

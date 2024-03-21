@@ -8,11 +8,9 @@
 ANaveEnemigoNodriza::ANaveEnemigoNodriza()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveNodriza(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh8"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveNodriza(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Trim_90_In.Shape_Trim_90_In'"));
+	//	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh8"));
 	NaveEnemigoMesh->SetStaticMesh(MeshNaveNodriza.Object);
-	NaveEnemigoMesh->SetupAttachment(RootComponent);
-	RootComponent = NaveEnemigoMesh;
 }
 
 ANaveEnemigoNodriza::~ANaveEnemigoNodriza()
