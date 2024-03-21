@@ -9,10 +9,10 @@ AMyNaveEnemigoTransporteDefensora::AMyNaveEnemigoTransporteDefensora()
 {
 	PrimaryActorTick.bCanEverTick = true;
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveE(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-	MeshNaveEnemigoTransporteDefensora = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh"));
-	MeshNaveEnemigoTransporteDefensora->SetStaticMesh(MeshNaveE.Object);
-	MeshNaveEnemigoTransporteDefensora->SetupAttachment(RootComponent);
-	RootComponent = MeshNaveEnemigoTransporteDefensora;
+	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh"));
+	NaveEnemigoMesh->SetStaticMesh(MeshNaveE.Object);
+	NaveEnemigoMesh->SetupAttachment(RootComponent);
+	RootComponent = NaveEnemigoMesh;
 }
 
 void AMyNaveEnemigoTransporteDefensora::Mover(float DeltaTime)

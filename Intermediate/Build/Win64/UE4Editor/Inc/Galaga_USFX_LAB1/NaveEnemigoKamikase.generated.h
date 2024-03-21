@@ -58,10 +58,7 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ANaveEnemigoKamikase)
 
 
-#define Galaga_USFX_LAB1_Source_Galaga_USFX_LAB1_NaveEnemigoKamikase_h_15_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__MeshNaveEnemigoKamikase() { return STRUCT_OFFSET(ANaveEnemigoKamikase, MeshNaveEnemigoKamikase); }
-
-
+#define Galaga_USFX_LAB1_Source_Galaga_USFX_LAB1_NaveEnemigoKamikase_h_15_PRIVATE_PROPERTY_OFFSET
 #define Galaga_USFX_LAB1_Source_Galaga_USFX_LAB1_NaveEnemigoKamikase_h_12_PROLOG
 #define Galaga_USFX_LAB1_Source_Galaga_USFX_LAB1_NaveEnemigoKamikase_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

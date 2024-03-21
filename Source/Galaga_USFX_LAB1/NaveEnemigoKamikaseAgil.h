@@ -15,8 +15,6 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoKamikaseAgil : public ANaveEnemigoKamikas
 	GENERATED_BODY()
 public:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* MeshNaveEnemigoKamikaseAgil;
 
 	ANaveEnemigoKamikaseAgil();
 

@@ -22,8 +22,6 @@ private:
 	int cantidadBombas;
 public:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* MeshNaveEnemigocaza;
 
         ANaveEnemigocaza();	
 		~ANaveEnemigocaza();

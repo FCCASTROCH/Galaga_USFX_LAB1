@@ -9,10 +9,10 @@ ANaveEnemigoReabasteEnergia::ANaveEnemigoReabasteEnergia()
 {
 	PrimaryActorTick.bCanEverTick = true;
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveEnemigoReabasteEnergia1(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-	MeshNaveEnemigoReabasteEnergia = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh3"));
-	MeshNaveEnemigoReabasteEnergia->SetStaticMesh(MeshNaveEnemigoReabasteEnergia1.Object);
-	MeshNaveEnemigoReabasteEnergia->SetupAttachment(RootComponent);
-	RootComponent = MeshNaveEnemigoReabasteEnergia;
+	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh3"));
+	NaveEnemigoMesh->SetStaticMesh(MeshNaveEnemigoReabasteEnergia1.Object);
+	NaveEnemigoMesh->SetupAttachment(RootComponent);
+	RootComponent = NaveEnemigoMesh;
 }
 
 void ANaveEnemigoReabasteEnergia::Mover(float DeltaTime)

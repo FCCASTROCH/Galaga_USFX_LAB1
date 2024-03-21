@@ -13,10 +13,10 @@ ANaveEnemigocaza::ANaveEnemigocaza()
 	velocidad = 100.0f;
 	cantidadBombas = 5;
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveEnemigocaza1(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-	MeshNaveEnemigocaza = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh18"));
-	MeshNaveEnemigocaza->SetStaticMesh(MeshNaveEnemigocaza1.Object);
-	MeshNaveEnemigocaza->SetupAttachment(RootComponent);
-	RootComponent = MeshNaveEnemigocaza;
+	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh18"));
+	NaveEnemigoMesh->SetStaticMesh(MeshNaveEnemigocaza1.Object);
+	NaveEnemigoMesh->SetupAttachment(RootComponent);
+	RootComponent = NaveEnemigoMesh;
 }
 
 ANaveEnemigocaza::~ANaveEnemigocaza()

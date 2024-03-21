@@ -14,11 +14,7 @@ class GALAGA_USFX_LAB1_API ANaveEnemigocazaAsesina : public ANaveEnemigocaza
 {
 	GENERATED_BODY()
 public:
-//
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* MeshNaveAsesina;
-	//
 	ANaveEnemigocazaAsesina();
 	virtual void Atacar() override;
 	virtual void Mover(float DeltaTime) override; 

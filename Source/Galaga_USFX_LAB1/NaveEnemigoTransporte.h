@@ -19,8 +19,6 @@ private:
 	float capacidadCargaVolumen;
 
 public:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* MeshNaveEnemigoTransporte;
 
 	ANaveEnemigoTransporte();
 	~ANaveEnemigoTransporte();

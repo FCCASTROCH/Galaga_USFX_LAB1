@@ -17,7 +17,6 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigocazaAsesina() {}
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_ANaveEnemigocazaAsesina();
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_ANaveEnemigocaza();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX_LAB1();
-	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
 	void ANaveEnemigocazaAsesina::StaticRegisterNativesANaveEnemigocazaAsesina()
 	{
@@ -32,11 +31,6 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigocazaAsesina() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MeshNaveAsesina_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MeshNaveAsesina;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -51,19 +45,6 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigocazaAsesina() {}
 		{ "ModuleRelativePath", "NaveEnemigocazaAsesina.h" },
 	};
 #endif
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::NewProp_MeshNaveAsesina_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Projectile" },
-		{ "Comment", "//\n" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "NaveEnemigocazaAsesina.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::NewProp_MeshNaveAsesina = { "MeshNaveAsesina", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANaveEnemigocazaAsesina, MeshNaveAsesina), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::NewProp_MeshNaveAsesina_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::NewProp_MeshNaveAsesina_MetaData)) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::NewProp_MeshNaveAsesina,
-	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANaveEnemigocazaAsesina>::IsAbstract,
 	};
@@ -73,11 +54,11 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigocazaAsesina() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::PropPointers,
+		nullptr,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::PropPointers),
+		0,
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigocazaAsesina_Statics::Class_MetaDataParams))
@@ -91,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigocazaAsesina() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigocazaAsesina, 1284172505);
+	IMPLEMENT_CLASS(ANaveEnemigocazaAsesina, 705896408);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<ANaveEnemigocazaAsesina>()
 	{
 		return ANaveEnemigocazaAsesina::StaticClass();

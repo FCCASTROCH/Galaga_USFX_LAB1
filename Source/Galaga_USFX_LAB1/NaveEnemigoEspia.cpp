@@ -9,10 +9,10 @@ ANaveEnemigoEspia::ANaveEnemigoEspia()
 {
 	PrimaryActorTick.bCanEverTick = true;
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshNaveEs(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
-	MeshNaveEnemigoEspia = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh15"));
-	MeshNaveEnemigoEspia->SetStaticMesh(MeshNaveEs.Object);
-	MeshNaveEnemigoEspia->SetupAttachment(RootComponent);
-	RootComponent = MeshNaveEnemigoEspia;
+	NaveEnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Nave mesh15"));
+	NaveEnemigoMesh->SetStaticMesh(MeshNaveEs.Object);
+	NaveEnemigoMesh->SetupAttachment(RootComponent);
+	RootComponent = NaveEnemigoMesh;
 }
 
 ANaveEnemigoEspia::~ANaveEnemigoEspia()

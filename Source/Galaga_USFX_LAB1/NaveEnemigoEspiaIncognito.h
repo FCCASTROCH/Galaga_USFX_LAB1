@@ -15,8 +15,6 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoEspiaIncognito : public ANaveEnemigoEspia
 	GENERATED_BODY()
 public:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* MeshNaveIncognito;
 
 	ANaveEnemigoEspiaIncognito();
 	//metodos sobreescritos

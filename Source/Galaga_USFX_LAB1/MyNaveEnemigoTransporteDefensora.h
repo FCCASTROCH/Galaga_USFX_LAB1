@@ -14,8 +14,6 @@ class GALAGA_USFX_LAB1_API AMyNaveEnemigoTransporteDefensora : public ANaveEnemi
 {
 	GENERATED_BODY()
 public:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* MeshNaveEnemigoTransporteDefensora;
 
 	AMyNaveEnemigoTransporteDefensora();
 	virtual void Mover(float DeltaTime)override;

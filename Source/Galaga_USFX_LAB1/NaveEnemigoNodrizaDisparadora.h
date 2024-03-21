@@ -15,8 +15,6 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoNodrizaDisparadora : public ANaveEnemigoN
 	GENERATED_BODY()
 public:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* MeshNaveEnemigoNodrizaDisparadora;
 	ANaveEnemigoNodrizaDisparadora();
 	virtual void Mover(float DeltaTime)override;
 	virtual void Disparar()override;
