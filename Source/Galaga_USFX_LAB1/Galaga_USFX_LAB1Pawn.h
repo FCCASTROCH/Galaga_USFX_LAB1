@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "ComponenteActor.h"
 #include "Galaga_USFX_LAB1Pawn.generated.h"
 
 UCLASS(Blueprintable)
@@ -48,7 +49,7 @@ public:
 	// End Actor Interface
 
 	/* Fire a shot in the specified direction */
-	void FireShot();
+	void FireShot(FVector FireDirection);
 
 	/* Handler for the fire timer expiry */
 	void ShotTimerExpired();
@@ -74,5 +75,25 @@ public:
 	FORCEINLINE class UCameraComponent* GetCameraComponent() const { return CameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+public:
+	//TArray<ACapsula*>ACapsulaArmas;
+	float NumProyectilesDisparados;
+	//float NumItems;
+	UPROPERTY()
+	UComponenteActor* MyInventor;
+	UFUNCTION()
+	void DropItem();
+	UFUNCTION()
+	void TakeItem(ACapsula* InventoryItem);
+	//UFUNCTION()
+	//void TakeItem(ACapsulaArmas* InventoryItem2);
+	void ReloadEnergy();
+	void CheckInventory();
+	void ReloadAmmo();
+	virtual void NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override;
+	float NumProye;
+	float MaxProye;
+	float NumItems;
+
 };
 

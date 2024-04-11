@@ -17,14 +17,91 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_AGalaga_USFX_LAB1Pawn();
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX_LAB1();
+	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_ACapsula_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
+	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_UComponenteActor_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AGalaga_USFX_LAB1Pawn::execTakeItem)
+	{
+		P_GET_OBJECT(ACapsula,Z_Param_InventoryItem);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->TakeItem(Z_Param_InventoryItem);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AGalaga_USFX_LAB1Pawn::execDropItem)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->DropItem();
+		P_NATIVE_END;
+	}
 	void AGalaga_USFX_LAB1Pawn::StaticRegisterNativesAGalaga_USFX_LAB1Pawn()
 	{
+		UClass* Class = AGalaga_USFX_LAB1Pawn::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "DropItem", &AGalaga_USFX_LAB1Pawn::execDropItem },
+			{ "TakeItem", &AGalaga_USFX_LAB1Pawn::execTakeItem },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_DropItem_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_DropItem_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Galaga_USFX_LAB1Pawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_DropItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGalaga_USFX_LAB1Pawn, nullptr, "DropItem", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_DropItem_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_DropItem_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_DropItem()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_DropItem_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics
+	{
+		struct Galaga_USFX_LAB1Pawn_eventTakeItem_Parms
+		{
+			ACapsula* InventoryItem;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_InventoryItem;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics::NewProp_InventoryItem = { "InventoryItem", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Galaga_USFX_LAB1Pawn_eventTakeItem_Parms, InventoryItem), Z_Construct_UClass_ACapsula_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics::NewProp_InventoryItem,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Galaga_USFX_LAB1Pawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGalaga_USFX_LAB1Pawn, nullptr, "TakeItem", nullptr, nullptr, sizeof(Galaga_USFX_LAB1Pawn_eventTakeItem_Parms), Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_NoRegister()
 	{
@@ -33,6 +110,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 	struct Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -64,6 +142,10 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireSound_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FireSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MyInventor_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MyInventor;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -71,6 +153,10 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 	UObject* (*const Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_APawn,
 		(UObject* (*)())Z_Construct_UPackage__Script_Galaga_USFX_LAB1,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_DropItem, "DropItem" }, // 725112450
+		{ &Z_Construct_UFunction_AGalaga_USFX_LAB1Pawn_TakeItem, "TakeItem" }, // 4172385112
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::Class_MetaDataParams[] = {
@@ -150,6 +236,15 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_FireSound = { "FireSound", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_LAB1Pawn, FireSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_FireSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_FireSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_MyInventor_MetaData[] = {
+		{ "Comment", "//float NumItems;\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Galaga_USFX_LAB1Pawn.h" },
+		{ "ToolTip", "float NumItems;" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_MyInventor = { "MyInventor", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_LAB1Pawn, MyInventor), Z_Construct_UClass_UComponenteActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_MyInventor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_MyInventor_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_ShipMeshComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_CameraComponent,
@@ -158,6 +253,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_FireRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_MoveSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_FireSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_MyInventor,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AGalaga_USFX_LAB1Pawn>::IsAbstract,
@@ -167,11 +263,11 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::PropPointers),
 		0,
 		0x008000A4u,
@@ -186,7 +282,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGalaga_USFX_LAB1Pawn, 210955656);
+	IMPLEMENT_CLASS(AGalaga_USFX_LAB1Pawn, 1443790402);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<AGalaga_USFX_LAB1Pawn>()
 	{
 		return AGalaga_USFX_LAB1Pawn::StaticClass();

@@ -12,21 +12,24 @@
 #include "Engine/StaticMesh.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
-
+#include "Capsula.h"
+#include "CapsulaArmas.h"
+#include "CapsulaEnergia.h"
+#include "componenteActor.h"
 const FName AGalaga_USFX_LAB1Pawn::MoveForwardBinding("MoveForward");
 const FName AGalaga_USFX_LAB1Pawn::MoveRightBinding("MoveRight");
 const FName AGalaga_USFX_LAB1Pawn::FireForwardBinding("FireForward");
 const FName AGalaga_USFX_LAB1Pawn::FireRightBinding("FireRight");
 
 AGalaga_USFX_LAB1Pawn::AGalaga_USFX_LAB1Pawn()
-{	
+{
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("/Game/TwinStick/Meshes/TwinStickUFO.TwinStickUFO"));
 	// Create the mesh component
 	ShipMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	RootComponent = ShipMeshComponent;
 	ShipMeshComponent->SetCollisionProfileName(UCollisionProfile::Pawn_ProfileName);
 	ShipMeshComponent->SetStaticMesh(ShipMesh.Object);
-	
+
 	// Cache our sound effect
 	static ConstructorHelpers::FObjectFinder<USoundBase> FireAudio(TEXT("/Game/TwinStick/Audio/TwinStickFire.TwinStickFire"));
 	FireSound = FireAudio.Object;
@@ -36,7 +39,7 @@ AGalaga_USFX_LAB1Pawn::AGalaga_USFX_LAB1Pawn()
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->SetUsingAbsoluteRotation(true); // Don't want arm to rotate when ship does
 	CameraBoom->TargetArmLength = 1200.f;
-	CameraBoom->SetRelativeRotation(FRotator(-120.f, 0.f, 0.f));
+	CameraBoom->SetRelativeRotation(FRotator(-80.f, 0.f, 0.f));
 	CameraBoom->bDoCollisionTest = false; // Don't want to pull camera in when it collides with level
 
 	// Create a camera...
@@ -50,6 +53,10 @@ AGalaga_USFX_LAB1Pawn::AGalaga_USFX_LAB1Pawn()
 	GunOffset = FVector(90.f, 0.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
+	MyInventor = CreateDefaultSubobject<UComponenteActor>("MyInventory");
+
+	NumItems = 0;
+
 }
 
 void AGalaga_USFX_LAB1Pawn::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -61,6 +68,10 @@ void AGalaga_USFX_LAB1Pawn::SetupPlayerInputComponent(class UInputComponent* Pla
 	PlayerInputComponent->BindAxis(MoveRightBinding);
 	PlayerInputComponent->BindAxis(FireForwardBinding);
 	PlayerInputComponent->BindAxis(FireRightBinding);
+
+	PlayerInputComponent->BindAction("DropItem", EInputEvent::IE_Pressed, this, &AGalaga_USFX_LAB1Pawn::DropItem);
+	PlayerInputComponent->BindAction("ReloadAmmo", IE_Pressed, this, &AGalaga_USFX_LAB1Pawn::ReloadAmmo);
+	PlayerInputComponent->BindAction("ReloadEnergy", IE_Pressed, this, &AGalaga_USFX_LAB1Pawn::ReloadEnergy);
 }
 
 void AGalaga_USFX_LAB1Pawn::Tick(float DeltaSeconds)
@@ -78,60 +89,262 @@ void AGalaga_USFX_LAB1Pawn::Tick(float DeltaSeconds)
 	// If non-zero size, move this actor
 	if (Movement.SizeSquared() > 0.0f)
 	{
-		
+		const FRotator NewRotation = Movement.Rotation();
 		FHitResult Hit(1.f);
-		RootComponent->MoveComponent(Movement, RootComponent->GetComponentQuat(), true, &Hit);
-		
+		RootComponent->MoveComponent(Movement, NewRotation, true, &Hit);
+
 		if (Hit.IsValidBlockingHit())
 		{
 			const FVector Normal2D = Hit.Normal.GetSafeNormal2D();
 			const FVector Deflection = FVector::VectorPlaneProject(Movement, Normal2D) * (1.f - Hit.Time);
-			RootComponent->MoveComponent(Deflection, RootComponent->GetComponentQuat(), true);
+			RootComponent->MoveComponent(Deflection, NewRotation, true);
 		}
 	}
-	
+
 	// Create fire direction vector
 	const float FireForwardValue = GetInputAxisValue(FireForwardBinding);
 	const float FireRightValue = GetInputAxisValue(FireRightBinding);
 	const FVector FireDirection = FVector(FireForwardValue, FireRightValue, 0.f);
 
 	// Try and fire a shot
-	FireShot();
+	FireShot(FireDirection);
 }
-void AGalaga_USFX_LAB1Pawn::FireShot()
+
+void AGalaga_USFX_LAB1Pawn::FireShot(FVector FireDirection)
 {
 	// If it's ok to fire again
-	if (bCanFire)
+	if (bCanFire == true)
 	{
-		// Calculate fire direction based on actor's rotation (only fire forward)
-		const FRotator FireRotation = GetActorRotation();
-		const FVector FireDirection = FireRotation.Vector();
-
-		// Spawn projectile at an offset from this pawn
-		const FVector SpawnLocation = GetActorLocation() + FireDirection * GunOffset.X;
-
-		UWorld* const World = GetWorld();
-		if (World != nullptr)
+		// If we are pressing fire stick in a direction
+		if (FireDirection.SizeSquared() > 0.0f)
 		{
-			// spawn the projectile
-			World->SpawnActor<AGalaga_USFX_LAB1Projectile>(SpawnLocation, FireRotation);
-		}
+			const FRotator FireRotation = FireDirection.Rotation();
+			// Spawn projectile at an offset from this pawn
+			const FVector SpawnLocation = GetActorLocation() + FireRotation.RotateVector(GunOffset);
 
-		// Disable firing temporarily
-		bCanFire = false;
-		World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &AGalaga_USFX_LAB1Pawn::ShotTimerExpired, FireRate);
+			UWorld* const World = GetWorld();
+			if (World != nullptr)
+			{
+				// spawn the projectile
+				World->SpawnActor<AGalaga_USFX_LAB1Projectile>(SpawnLocation, FireRotation);
+			}
 
-		// try and play the sound if specified
-		if (FireSound != nullptr)
-		{
-			UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+			bCanFire = false;
+			World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &AGalaga_USFX_LAB1Pawn::ShotTimerExpired, FireRate);
+
+			// try and play the sound if specified
+			if (FireSound != nullptr)
+			{
+				UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+			}
+
+			bCanFire = false;
 		}
 	}
-	
 }
+
+
 
 void AGalaga_USFX_LAB1Pawn::ShotTimerExpired()
 {
 	bCanFire = true;
+}
+void AGalaga_USFX_LAB1Pawn::DropItem()
+{
+	if (MyInventor->CurrentInventory.IsEmpty()) {
+		if (GEngine) {
+			FString Message = FString::Printf(TEXT("Tienes %d objetos en tu inventario "), NumItems);
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, Message);
+		}
+		return;
+
+	}
+	ACapsula* Item = nullptr;
+	MyInventor->CurrentInventory.Dequeue(Item);//MyInventory->CurrentInventory.Last();
+	//MyInventory->CurrentInventory.Last();
+//MyInventory->RemoveFromInventory(Item);
+	NumItems -= 1;
+	// Obtén la ubicación actual de la nave
+	FVector ShipLocation = GetActorLocation();
+	FVector ItemOrigin;
+	FVector ItemBounds;
+	Item->GetActorBounds(false, ItemOrigin, ItemBounds);
+
+	// Ajusta la posición para centrar el objeto con respecto a la nave
+	float DropDistance = 200.0f; // Distancia adicional para dejar caer el objeto
+	FVector DropOffset = FVector(0.0f, 0.0f, ItemBounds.Z * 0.5f); // Ajusta la posición verticalmente para centrar el objeto
+	FTransform PutDownLocation = FTransform(GetActorRotation(), ShipLocation + DropOffset +
+		(RootComponent->GetForwardVector() * DropDistance)); // Combina la ubicación de la nave con el desplazamiento vertical y horizontal
+
+	Item->PutDown(PutDownLocation); // Coloca el objeto en la ubicación especificada
+
+	//Verifica el inventario después de soltar un objeto
+	CheckInventory();
+}
+
+
+
+void AGalaga_USFX_LAB1Pawn::TakeItem(ACapsula* InventoryItem)
+{
+	NumItems++;
+	InventoryItem->PickUp();
+	MyInventor->AddToInventory(InventoryItem);
+	// Declarar un TimerHandle
+
+
+
+	// Configurar el temporizador con SetTimer
+	float DelayInSeconds = 10.0f; // Tiempo de retraso en segundos
+	bool bLooping = false; // Si el temporizador debe repetirse automáticamente o no
+	ACapsulaArmas* AmmoItem = Cast<ACapsulaArmas>(InventoryItem);
+	if (AmmoItem)
+	{
+		FTimerHandle MyTimerHandle1;
+		GetWorldTimerManager().SetTimer(MyTimerHandle1, this, &AGalaga_USFX_LAB1Pawn::ReloadAmmo, DelayInSeconds, bLooping);
+	}
+
+	ACapsulaEnergia* EnergyItem = Cast<ACapsulaEnergia>(InventoryItem);
+	if (EnergyItem)
+	{
+		FTimerHandle MyTimerHandle2;
+		GetWorldTimerManager().SetTimer(MyTimerHandle2, this, &AGalaga_USFX_LAB1Pawn::ReloadEnergy, DelayInSeconds, bLooping);
+	}
+
+	//GetWorldTimerManager().SetTimer(MyTimerHandle1, this, &AGalaga_USFX_L01Pawn::ReloadAmmo, DelayInSeconds, bLooping);
+	NumItems += 1;
+	//Verifica el inventario después de recoger un objeto
+	FString Message = FString::Printf(TEXT("Has recogido %d objetos"), NumItems);
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, Message);
+	}
+	CheckInventory();
+}
+
+void AGalaga_USFX_LAB1Pawn::ReloadEnergy()
+{
+	// Bandera para verificar si se encontró un objeto de munición
+	bool bFoundEnergy = false;
+	// Itera sobre los objetos en el inventario para encontrar uno de Energia
+	ACapsula* InventoryItem = nullptr;
+	//for (AInventoryActor* InventoryItem : MyInventory->CurrentInventory)
+	while (MyInventor->CurrentInventory.Dequeue(InventoryItem))
+	{
+		// Intenta hacer un cast a AInventoryActorEnergy
+		ACapsulaEnergia* EnergyItem = Cast<ACapsulaEnergia>(InventoryItem);
+		if (EnergyItem)
+		{
+			// Se encontró un objeto de munición en el inventario
+			bFoundEnergy = true;
+			// Se encontró un objeto de Energia en el inventario
+			// Elimina el objeto de munición del inventario
+			//MyInventory->RemoveFromInventory(EnergyItem);
+
+			// Muestra un mensaje de depuración
+			if (GEngine)
+			{
+				//FString Message = FString::Printf(TEXT("Se recargaron %d de municion"), MaxProyectilesDisparados);
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "Se restablecio 100 pts de vida");
+			}
+			NumItems -= 1;
+			CheckInventory();
+			// Sal del bucle ya que encontraste y manejaste un objeto de munición
+			break;
+		}
+
+	}
+	// Verifica si no se encontró ningún objeto de munición
+	if (!bFoundEnergy)
+	{
+		// Muestra un mensaje indicando que no se encontró ninguna capsula de energia
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "No tienes Energia para recargar");
+		}
+	}
+}
+
+void AGalaga_USFX_LAB1Pawn::CheckInventory()
+{
+	// Verifica si el componente de inventario existe
+	if (MyInventor)
+	{
+		if (GEngine)
+		{
+			FString Message = FString::Printf(TEXT("Tienes %d objetos en tu inventario"), NumItems);
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, Message);
+		}
+	}
+	else
+	{
+
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "No tienes un Items de municion en el inventario");
+		}
+	}
+}
+
+void AGalaga_USFX_LAB1Pawn::ReloadAmmo()
+{
+	// Bandera para verificar si se encontró un objeto de munición
+	bool bFoundAmmo = false;
+
+	// Itera sobre los objetos en el inventario para encontrar uno de munición
+	ACapsula* InventoryItem = nullptr;
+
+	//for (AInventoryActor* InventoryItem : MyInventory->CurrentInventory)
+	while (MyInventor->CurrentInventory.Dequeue(InventoryItem))
+	{
+		// Intenta hacer un cast a AInventoryActorMunicion
+		ACapsulaArmas* AmmoItem = Cast<ACapsulaArmas>(InventoryItem);
+		if (AmmoItem)
+		{
+			// Se encontró un objeto de munición en el inventario
+			bFoundAmmo = true;
+
+			// Se encontró un objeto de munición en el inventario
+			// Elimina el objeto de munición del inventario			
+			//MyInventory->RemoveFromInventory(AmmoItem);
+			NumProye = 0; // Restablece el contador de proyectiles disparados.
+			MaxProye = 20; // Establece el número máximo de proyectiles disparados
+			bCanFire = true; // Permite al jugador disparar nuevamente.
+
+			if (GEngine)
+			{
+				FString Message = FString::Printf(TEXT("Se recargaron +%d de municion"), MaxProye);//max proyectiles disparados
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, Message);
+			}
+
+			NumItems -= 1; // Disminuye el contador de objetos en el inventario
+			CheckInventory();
+
+			// Sal del bucle ya que encontraste y manejaste un objeto de munición
+			break;
+		}
+	}
+
+	// Verifica si no se encontró ningún objeto de munición
+	if (!bFoundAmmo)
+	{
+		// Muestra un mensaje indicando que no se encontró ningún objeto de munición
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "No tienes municion para recargar");
+		}
+	}
+}
+
+void AGalaga_USFX_LAB1Pawn::NotifyHit(class UPrimitiveComponent*
+	MyComp, AActor* Other, class UPrimitiveComponent* OtherComp,
+	bool bSelfMoved, FVector HitLocation, FVector HitNormal,
+	FVector NormalImpulse, const FHitResult& Hit)
+{
+	ACapsula* InventoryItem =
+		Cast<ACapsula>(Other);
+	if (InventoryItem != nullptr)
+	{
+		TakeItem(InventoryItem);
+	}
 }
 

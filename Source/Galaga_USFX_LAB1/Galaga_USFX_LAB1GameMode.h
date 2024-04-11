@@ -4,11 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+//#include "NaveEnemigo.h"
 #include "Galaga_USFX_LAB1GameMode.generated.h"
-class ANaveEnemigo;
-class ANave;
 class ANaveEnemigoTransporte;
 class ANaveEnemigocaza;
+class ANave;
+class ANaveEnemigo;
+
 
 UCLASS(MinimalAPI)
 class AGalaga_USFX_LAB1GameMode : public AGameModeBase
@@ -32,6 +34,22 @@ public:
 	//TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	void SpawnCapsulas();
+	FTimerHandle TimerHandle_SpawnCapsulas;
+
+TMap<int32, ANaveEnemigo*> NaveEnemig; // Mapa de naves enemigas
+
+void AgregarNaveEnemiga(int32 ID, ANaveEnemigo* NuevaNave);
+void ModificarNaveEnemiga(int32 ID, ANaveEnemigo* NuevaNave);
+//void EliminarNaveEnemiga(int32 ID);
+
+void SpawnNaveEnemiga(); // Declaración de la función SpawnNaveEnemiga
+void ModificarNaves(); // Declaración de la función ModificarNaves
+//void EliminarNavesPeriodicamente(); // Declaración de la función EliminarNavesPeriodicamente
+
+FTimerHandle SpawnTimerHandle; // Manejador del temporizador de spawn
+FTimerHandle ModifyTimerHandle; // Manejador del temporizador de agregar fila
+FTimerHandle DeleteTimerHandle; // Manejador del temporizador de eliminar naves
 };
 
 

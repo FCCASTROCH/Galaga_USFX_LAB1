@@ -19,7 +19,11 @@
 #include "NaveEnemigoNodriza.h"
 #include "NaveEnemigoNodrizaReparadora.h"
 #include "NaveEnemigoNodrizaDisparadora.h"
-
+#include "Capsula.h"
+#include "CapsulaArmas.h"
+#include "CapsulaEnergia.h"
+#include "TimerManager.h"
+#include "Engine/World.h"
 AGalaga_USFX_LAB1GameMode::AGalaga_USFX_LAB1GameMode()
 {
 	// set default pawn class to our character class
@@ -73,6 +77,10 @@ void AGalaga_USFX_LAB1GameMode::BeginPlay()
         }
         tiempotranscurrido = 0;
     }
+    GetWorldTimerManager().SetTimer(TimerHandle_SpawnCapsulas, this, &AGalaga_USFX_LAB1GameMode::SpawnCapsulas, 5.0f, true);
+
+	GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle, this, &AGalaga_USFX_LAB1GameMode::SpawnNaveEnemiga, 5.0f, true);
+    GetWorld()->GetTimerManager().SetTimer(ModifyTimerHandle, this, &AGalaga_USFX_LAB1GameMode::ModificarNaves, 6.0f, true);
 }
 
 
@@ -82,4 +90,126 @@ void AGalaga_USFX_LAB1GameMode::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	
 }
+void AGalaga_USFX_LAB1GameMode::SpawnCapsulas()
+{
 
+    FVector ubicacionCapsula = FVector(-900.0f, 1000.0f, 500.0f);
+    FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
+    //Para el spauwn de las objetos de inventario
+    for (int i = 0; i < 6; i++) {
+        FVector PosicionInventario = FVector(ubicacionCapsula.X, ubicacionCapsula.Y + i * 100.0f, ubicacionCapsula.Z);
+        //Generar un número aleatorio entre 0 y 1
+        float RandomNumber = FMath::FRandRange(0.0f, 1.0f);
+
+        // Probabilidad de generar una nave caza o transporte (50% cada una)
+        if (RandomNumber <= 0.5f) {
+            ACapsula* ObjetoInventario = GetWorld()->SpawnActor<ACapsulaArmas>(ACapsulaArmas::StaticClass(), PosicionInventario, rotacionNave);
+            //Spawnea el objeto de inventario en una posicion y rotacion especifica  
+        }
+        else {
+            ACapsula* ObjetoInventario = GetWorld()->SpawnActor<ACapsulaEnergia>(ACapsulaEnergia::StaticClass(), PosicionInventario, rotacionNave);
+            //Spawnea el objeto de inventario en una posicion y rotacion especifica  
+        }
+
+    }
+}
+void AGalaga_USFX_LAB1GameMode::AgregarNaveEnemiga(int32 ID, ANaveEnemigo* NuevaNave)
+{
+	// Verificar si ya hay una nave enemiga con el mismo ID
+	if (NaveEnemig.Contains(ID))
+	{
+		// Si ya existe, mostrar un mensaje de advertencia y no agregar la nueva nave
+		UE_LOG(LogTemp, Warning, TEXT("Ya existe una nave enemiga con el ID %d"), ID);
+	}
+	else
+	{
+		// Si no existe, agregar la nueva nave al mapa
+		NaveEnemig.Add(ID, NuevaNave);
+	}
+}
+void AGalaga_USFX_LAB1GameMode::SpawnNaveEnemiga()
+{
+	const int32 NumeroDeColumnas = 2;
+	const int32 NumeroDeFilas = 2;
+	int32 NaveID = 1;
+
+	for (int32 Columna = 0; Columna < NumeroDeColumnas; ++Columna)
+	{
+		for (int32 Fila = 0; Fila < NumeroDeFilas; ++Fila)
+		{
+			FVector SpawnLocation = FVector(Columna * 200.0f, Fila * 100.0f, 350.0f);
+			FRotator SpawnRotation = FRotator::ZeroRotator;
+
+			// Verificar si ya existe una nave enemiga con el ID correspondiente
+			if (!NaveEnemig.Contains(NaveID))
+			{
+				// Si no existe, crear una nueva nave enemiga
+				ANaveEnemigo* NuevaNave = GetWorld()->SpawnActor<ANaveEnemigocaza>(SpawnLocation, SpawnRotation);
+				if (NuevaNave)
+				{
+					// Agregar la nueva nave al mapa con su ID correspondiente
+					AgregarNaveEnemiga(NaveID, NuevaNave);
+				}
+				else
+				{
+					UE_LOG(LogTemp, Error, TEXT("No se pudo crear la nave enemiga caza."));
+				}
+			}
+
+			++NaveID;
+		}
+	}
+}
+
+void AGalaga_USFX_LAB1GameMode::ModificarNaves()
+{
+	UE_LOG(LogTemp, Warning, TEXT("ModificarNaves() ejecutada"));
+	for (auto& Pair : NaveEnemig)
+	{
+		int32 ID = Pair.Key;
+		ANaveEnemigo* NuevaNave = Pair.Value;
+		UE_LOG(LogTemp, Warning, TEXT("Modificando nave ID: %d"), ID);
+
+	//caza
+		ANaveEnemigo* NuevaNaveCaza = Cast<ANaveEnemigocaza>(NuevaNave);
+		if (NuevaNaveCaza)
+		{
+		
+			FVector SpawnLocation = NuevaNaveCaza->GetActorLocation();
+			FRotator SpawnRotation = NuevaNaveCaza->GetActorRotation();
+
+			// Destruye la nave enemiga actual
+			NuevaNaveCaza->Destroy();
+			//transporte
+			ANaveEnemigo* NuevaNaveEspia = GetWorld()->SpawnActor<ANaveEnemigoEspia>(SpawnLocation, SpawnRotation);
+			
+			if (NuevaNaveEspia)
+			{
+				// Modifica el mapa para que apunte a la nueva nave enemiga de tipo transporte
+				NaveEnemig[ID] = NuevaNaveEspia;
+			}
+			else
+			{
+				// Manejar errores si no se puede crear la nueva nave enemiga
+				UE_LOG(LogTemp, Error, TEXT("No se pudo crear la nave enemiga transporte."));
+			}
+		}
+	}
+}
+
+
+
+void AGalaga_USFX_LAB1GameMode::ModificarNaveEnemiga(int32 ID, ANaveEnemigo* NuevaNave)
+{
+	// Verificar si existe una nave enemiga con el ID proporcionado
+	if (NaveEnemig.Contains(ID))
+	{
+		// Si existe, modificar la nave enemiga con la nueva nave proporcionada
+		NaveEnemig[ID] = NuevaNave;
+	}
+	else
+	{
+		// Si no existe, mostrar un mensaje de advertencia
+		UE_LOG(LogTemp, Warning, TEXT("No existe una nave enemiga con el ID %d para modificar"), ID);
+	}
+}

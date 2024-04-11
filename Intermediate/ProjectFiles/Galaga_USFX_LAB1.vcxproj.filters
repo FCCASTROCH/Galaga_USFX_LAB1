@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX_LAB1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{DADBB21C-FBD8-4A16-AAAD-159391D4846D}</UniqueIdentifier>
+      <UniqueIdentifier>{D2ED9B77-BCA5-41F3-A53A-F53F3A2D12B9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX_LAB1.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{100A75B1-4F8A-400D-8D23-3648C9352C10}</UniqueIdentifier>
+      <UniqueIdentifier>{7A870EF5-E1C1-4AB4-AED9-D2A1852A41FA}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,12 +32,36 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX_LAB1">
-      <UniqueIdentifier>{38E39C2F-D4CB-43A6-9204-64FF59904944}</UniqueIdentifier>
+      <UniqueIdentifier>{69E3F063-6F18-4C54-B3F4-AC70DA298A68}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\Bonus.cpp">
       <Filter>Source\Galaga_USFX_LAB1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\Bonus.h">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\Capsula.cpp">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\Capsula.h">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\CapsulaArmas.cpp">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\CapsulaArmas.h">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\CapsulaEnergia.cpp">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\CapsulaEnergia.h">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\ComponenteActor.cpp">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\ComponenteActor.h">
       <Filter>Source\Galaga_USFX_LAB1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\EstadisticasJugador.cpp">

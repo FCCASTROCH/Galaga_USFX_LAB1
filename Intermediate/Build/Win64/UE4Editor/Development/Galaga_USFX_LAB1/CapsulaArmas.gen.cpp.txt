@@ -1,0 +1,9 @@
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Definitions.Galaga_USFX_LAB1.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/CapsulaArmas.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\Capsula.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/StaticMeshActor.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\StaticMeshActor.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Capsula.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\CapsulaArmas.generated.h
