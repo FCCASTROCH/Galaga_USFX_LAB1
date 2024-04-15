@@ -18,12 +18,14 @@ public:
 
 	ANaveEnemigoEspiaIncognito();
 	//metodos sobreescritos
-
+	void BeginPlay() override;
+	void Tick(float DeltaTime) override;
 	virtual void Mover(float DeltaTime) override;
 	virtual void Disparar() override;
 	virtual void Destruirse() override;
 	virtual void Escapar()override;
 	virtual void Atacar()override;
+	void movimientoObstaculo() override;
 	//metodo propio
 	void ModoIncognito();
 };

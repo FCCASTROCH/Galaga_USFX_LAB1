@@ -17,7 +17,8 @@ public:
 
 
 	ANaveEnemigoKamikaseAgil();
-
+	void BeginPlay() override;
+	void Tick(float DeltaTime) override;
 	virtual void Mover(float DeltaTime) override;
 	virtual void Disparar()override;
 	virtual void Destruirse()override;
@@ -25,5 +26,6 @@ public:
 	virtual void Atacar()override;
 	//metodos propios
 	void velocidadAumentada();
+	void movimientoObstaculo() override;
 	
 };

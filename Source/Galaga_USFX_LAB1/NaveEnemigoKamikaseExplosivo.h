@@ -16,10 +16,13 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoKamikaseExplosivo : public ANaveEnemigoKa
 public:
 
 	ANaveEnemigoKamikaseExplosivo();
+	void BeginPlay() override;
+	void Tick(float DeltaTime) override;
 	virtual void Mover(float DeltaTime)override;
 	virtual void Disparar()override;
 	virtual void Destruirse()override;
 	virtual void Escapar()override;
 	virtual void Atacar()override;
+	void movimientoObstaculo() override;
 	//metodos propios
 };

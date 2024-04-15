@@ -5,7 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "ComponenteActor.h"
+#include "SceneComponentSpawn.h"
+#include "GameFramework/PlayerInput.h"
 #include "Galaga_USFX_LAB1Pawn.generated.h"
+
 
 UCLASS(Blueprintable)
 class AGalaga_USFX_LAB1Pawn : public APawn
@@ -59,6 +62,8 @@ public:
 	static const FName MoveRightBinding;
 	static const FName FireForwardBinding;
 	static const FName FireRightBinding;
+	static const FName MoveDiagonalForwardBinding;
+	static const FName MoveDiagonalRightBinding;
 
 private:
 
@@ -77,14 +82,25 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 public:
 	//TArray<ACapsula*>ACapsulaArmas;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	USceneComponentSpawn* SceneComponentSpawn;
 	float NumProyectilesDisparados;
+	float MaxProyectilesDisparados;
 	//float NumItems;
+
+
+
+
 	UPROPERTY()
 	UComponenteActor* MyInventor;
 	UFUNCTION()
 	void DropItem();
 	UFUNCTION()
 	void TakeItem(ACapsula* InventoryItem);
+
+
+
+
 	//UFUNCTION()
 	//void TakeItem(ACapsulaArmas* InventoryItem2);
 	void ReloadEnergy();
@@ -94,6 +110,55 @@ public:
 	float NumProye;
 	float MaxProye;
 	float NumItems;
+	
+	void Saltar();
+	void FinSaltar();
+	//Movimiento en diagonal
+	void MoveDiagonalRight(float amount);
+	FInputAxisKeyMapping MoveDiagonalBindingRight;
+	FInputAxisKeyMapping MoveDiagonalBindingRight2;
+
+	void MoveDiagonalForward(float amount);
+	FInputAxisKeyMapping MoveDiagonalBindingForward;
+	FInputAxisKeyMapping MoveDiagonalBindingForward2;
+
+	//Funciones para los botones
+	FInputActionKeyMapping  Retornar;
+	FInputActionKeyMapping  Jump;	
+	FInputActionKeyMapping  DisparoDoble; //Disparo doble
+	FInputActionKeyMapping OnSpawn;
+
+	FInputActionKeyMapping  ChocaDestruye;
+	FInputActionKeyMapping  ChocaControla;
+	FInputActionKeyMapping  ChocaMeDestruyo;
+	FInputActionKeyMapping  ChocarAtravesar;
+	//Saber el numero de inventario
+	void OnSpawnActor();
+	void ActivarDisparoDoble();//Disparo doble
+
+	void RepeatMovement();
+	void RecordMovement();
+	//Funciones para los botones
+	void ChocaYDestruye();
+	void ChocaYControla();
+	void ChocaYMeDestruyo();
+	void ChocarYAtravesar();
+	void TeleportToMouse();
+    FVector InicialPosicion;
+	float AlturaSalto;
+	FVector2D lastInput;
+   int PresionarTecla;
+	float Multiplicador;
+
+	//Banderas
+	bool bDisparoDoble;//Disparo doble
+	bool bChocaYDestruye;
+	bool bChocaYControla;
+	bool bChocaYMeDestruyo;
+	bool bChocarYAtravesar;
+
+	void ReturnToInitialPosition();
+
 
 };
 

@@ -31,16 +31,22 @@ void ACapsulaArmas::Tick(float DeltaTime)
 
 void ACapsulaArmas::PickUp()
 {
+    // Deshabilita la actualización del tick del actor
     SetActorTickEnabled(false);
+    //oculta
     SetActorHiddenInGame(true);
+    //desactiva
     SetActorEnableCollision(false);
 }
 
 void ACapsulaArmas::PutDown(FTransform TargetLocation)
-{
+{//Activa Actualizacion
     SetActorTickEnabled(true);
+    //lo vuelve visible
     SetActorHiddenInGame(false);
+    //activa colisiones
     SetActorEnableCollision(true);
+    //establece la ubicacion
     SetActorLocation(TargetLocation.GetLocation());
 }
 

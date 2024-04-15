@@ -12,6 +12,14 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\StaticMeshActor.generated.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Capsula.generated.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\ComponenteActor.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\SceneComponentSpawn.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\Escudo.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Escudo.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\SceneComponentSpawn.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/PlayerInput.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\GestureRecognizer.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\KeyState.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\PlayerInput.generated.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Galaga_USFX_LAB1Pawn.generated.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\Galaga_USFX_LAB1Projectile.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Galaga_USFX_LAB1Projectile.generated.h
@@ -32,3 +40,11 @@ C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\C
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\CapsulaArmas.generated.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\CapsulaEnergia.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\CapsulaEnergia.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\NaveEnemigo.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\NaveEnemigo.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\NaveEnemigocaza.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\NaveEnemigocaza.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\NaveEnemigoEspia.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\NaveEnemigoEspia.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\NaveEnemigoTransporte.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\NaveEnemigoTransporte.generated.h

@@ -76,6 +76,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	bool movimiento;
+	float distanciaObs;
+
+	virtual void movimientoObstaculo();
 protected:
 	//Metodo virtual puro
 

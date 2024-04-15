@@ -17,11 +17,14 @@ public:
 
 
 	ANaveEnemigoEspiaSigiloso();
+	void BeginPlay() override;
+	void Tick(float DeltaTime) override;
 	virtual void Mover(float DeltaTime)override;
 	virtual void Disparar();
 	virtual void Destruirse();
 	virtual void Escapar();
 	virtual void Atacar();
+	void movimientoObstaculo() override;
 	//metodo propio
 
 };

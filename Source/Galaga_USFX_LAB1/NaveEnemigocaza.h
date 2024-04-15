@@ -42,4 +42,5 @@ protected:
 	virtual void Destruirse();
 	virtual void Escapar();
 	virtual void Atacar();
+	void movimientoObstaculo() override;
 };

@@ -17,12 +17,16 @@ public:
 
 
 	ANaveEnemigoEspia();
-	~ANaveEnemigoEspia();
+	float Timer ; //Inicializa el timer en 0    
+	float TiempoTranscurrido ;
+
 	virtual void Mover(float DeltaTime);
 	virtual void Disparar();
 	virtual void Destruirse();
 	virtual void Escapar();
 	virtual void Atacar();
+	void Tick(float DeltaTime);
+	void BeginPlay();
 
-	
+	void movimientoObstaculo() override;
 };

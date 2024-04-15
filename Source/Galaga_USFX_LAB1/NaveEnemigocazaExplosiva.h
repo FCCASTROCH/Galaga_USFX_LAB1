@@ -17,8 +17,11 @@ class GALAGA_USFX_LAB1_API ANaveEnemigocazaExplosiva : public ANaveEnemigocaza
 	public:
 		//Constructor
 		ANaveEnemigocazaExplosiva();
+		void BeginPlay() override;
+		void Tick(float DeltaTime) override;
 		virtual void Mover(float DeltaTime) override; //Sobrescribir los metodos
 	    virtual void Destruirse() override;
 		//metodo propio
 		void Explotar();
+		void movimientoObstaculo() override;
 };

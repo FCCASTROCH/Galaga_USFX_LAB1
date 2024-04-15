@@ -23,6 +23,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
+	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_USceneComponentSpawn_NoRegister();
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_UComponenteActor_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(AGalaga_USFX_LAB1Pawn::execTakeItem)
@@ -143,6 +144,10 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FireSound;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SceneComponentSpawn_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SceneComponentSpawn;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MyInventor_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MyInventor;
@@ -237,6 +242,16 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_FireSound = { "FireSound", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_LAB1Pawn, FireSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_FireSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_FireSound_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_SceneComponentSpawn_MetaData[] = {
+		{ "Category", "Components" },
+		{ "Comment", "//TArray<ACapsula*>ACapsulaArmas;\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Galaga_USFX_LAB1Pawn.h" },
+		{ "ToolTip", "TArray<ACapsula*>ACapsulaArmas;" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_SceneComponentSpawn = { "SceneComponentSpawn", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_LAB1Pawn, SceneComponentSpawn), Z_Construct_UClass_USceneComponentSpawn_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_SceneComponentSpawn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_SceneComponentSpawn_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_MyInventor_MetaData[] = {
 		{ "Comment", "//float NumItems;\n" },
 		{ "EditInline", "true" },
@@ -253,6 +268,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_FireRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_MoveSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_FireSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_SceneComponentSpawn,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_MyInventor,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::StaticCppClassTypeInfo = {
@@ -282,7 +298,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGalaga_USFX_LAB1Pawn, 1443790402);
+	IMPLEMENT_CLASS(AGalaga_USFX_LAB1Pawn, 2582481802);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<AGalaga_USFX_LAB1Pawn>()
 	{
 		return AGalaga_USFX_LAB1Pawn::StaticClass();

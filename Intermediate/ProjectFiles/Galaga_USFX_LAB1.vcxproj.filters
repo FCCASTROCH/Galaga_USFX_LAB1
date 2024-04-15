@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX_LAB1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{D2ED9B77-BCA5-41F3-A53A-F53F3A2D12B9}</UniqueIdentifier>
+      <UniqueIdentifier>{5BD59E88-7D1C-4B42-A2D9-38C8E11220E5}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX_LAB1.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{7A870EF5-E1C1-4AB4-AED9-D2A1852A41FA}</UniqueIdentifier>
+      <UniqueIdentifier>{4C0243C9-28AD-4D72-9711-3BCC22907D29}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX_LAB1">
-      <UniqueIdentifier>{69E3F063-6F18-4C54-B3F4-AC70DA298A68}</UniqueIdentifier>
+      <UniqueIdentifier>{8961C272-7034-4DA7-A598-18BB74A8A429}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\Bonus.cpp">
       <Filter>Source\Galaga_USFX_LAB1</Filter>
@@ -62,6 +62,12 @@
       <Filter>Source\Galaga_USFX_LAB1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\ComponenteActor.h">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\Escudo.cpp">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\Escudo.h">
       <Filter>Source\Galaga_USFX_LAB1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\EstadisticasJugador.cpp">
@@ -233,6 +239,12 @@
       <Filter>Source\Galaga_USFX_LAB1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\ProyectilEnemigo.h">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\SceneComponentSpawn.cpp">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\SceneComponentSpawn.h">
       <Filter>Source\Galaga_USFX_LAB1</Filter>
     </ClInclude>
   </ItemGroup>

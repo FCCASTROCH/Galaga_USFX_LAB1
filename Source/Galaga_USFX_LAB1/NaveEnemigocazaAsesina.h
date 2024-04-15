@@ -16,10 +16,13 @@ class GALAGA_USFX_LAB1_API ANaveEnemigocazaAsesina : public ANaveEnemigocaza
 public:
 
 	ANaveEnemigocazaAsesina();
+	void BeginPlay() override;
+	void Tick(float DeltaTime) override;
 	virtual void Atacar() override;
 	virtual void Mover(float DeltaTime) override; 
     virtual void Disparar() override;
 	virtual void Destruirse() override;
+	void movimientoObstaculo() override;
 
 	//metodos propios 
 	void AtaqueEspecial();

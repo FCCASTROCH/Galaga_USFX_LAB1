@@ -16,10 +16,12 @@ class GALAGA_USFX_LAB1_API ANaveEnemigoKamikase : public ANaveEnemigo
 protected:
 
 	ANaveEnemigoKamikase();
+	void BeginPlay() override;
+	void Tick(float DeltaTime) override;
 	virtual void Mover(float DeltaTime) ;
 	virtual void Disparar();
 	virtual void Destruirse();
 	virtual void Escapar();
 	virtual void Atacar();
-	
+	void movimientoObstaculo() override;
 };

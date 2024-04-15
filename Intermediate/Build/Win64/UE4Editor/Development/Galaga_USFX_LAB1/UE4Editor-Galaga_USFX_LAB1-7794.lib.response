@@ -1,0 +1,29 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Galaga_USFX_LAB1-7794.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\Galaga_USFX_LAB1Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Escudo.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Galaga_USFX_LAB1Pawn.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigo.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigocaza.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigocazaAsesina.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigocazaExplosiva.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoEspia.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoEspiaIncognito.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoEspiaSigiloso.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoKamikase.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoKamikaseAgil.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoKamikaseExplosivo.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\SceneComponentSpawn.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Module.Galaga_USFX_LAB1.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Escudo.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Galaga_USFX_LAB1.init.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\SceneComponentSpawn.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Module.Galaga_USFX_LAB1.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Default.rc2.res"
+/OUT:"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\UE4Editor-Galaga_USFX_LAB1-7794.lib"
