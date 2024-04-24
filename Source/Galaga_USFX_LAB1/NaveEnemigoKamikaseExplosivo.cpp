@@ -22,7 +22,7 @@ void ANaveEnemigoKamikaseExplosivo::BeginPlay()
 void ANaveEnemigoKamikaseExplosivo::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
+	//Mover(DeltaTime);
     if (movimiento) {
 		movimientoObstaculo();
 	}

@@ -36,8 +36,14 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	void SpawnCapsulas();
 	FTimerHandle TimerHandle_SpawnCapsulas;
-
+	FTimerHandle AgregarNaves;
 TMap<int32, ANaveEnemigo*> NaveEnemig; // Mapa de naves enemigas
+
+void AgregarPeticiones(); // Declaración de la función AgregarPeticiones
+
+
+
+TMap<int32, FString> Peticiones; // Mapa de peticiones de naves
 
 void AgregarNaveEnemiga(int32 ID, ANaveEnemigo* NuevaNave);
 void ModificarNaveEnemiga(int32 ID, ANaveEnemigo* NuevaNave);

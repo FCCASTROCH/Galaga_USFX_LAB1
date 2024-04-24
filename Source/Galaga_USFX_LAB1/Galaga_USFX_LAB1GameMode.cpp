@@ -24,6 +24,11 @@
 #include "CapsulaEnergia.h"
 #include "TimerManager.h"
 #include "Engine/World.h"
+#include "PeticionNaves.h"
+#include "PeticionNavesAtaque.h"
+#include "PeticionNavesSuicidas.h"
+#include "PeticionNavesLogisticas.h"
+
 AGalaga_USFX_LAB1GameMode::AGalaga_USFX_LAB1GameMode()
 {
 	// set default pawn class to our character class
@@ -35,52 +40,55 @@ void AGalaga_USFX_LAB1GameMode::BeginPlay()
 {
     Super::BeginPlay();
   
-    FVector ubicacionInicioNavesEnemigas = FVector(1850.0f, -1540.7f, 250.0f);
-    FVector ubicacionInicioNavesEnemigasTransporte = FVector(500.0f, 500.0f, 250.0f);
-    FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
-    
+    //FVector ubicacionInicioNavesEnemigas = FVector(1850.0f, -1540.7f, 250.0f);
+    //FVector ubicacionInicioNavesEnemigasTransporte = FVector(500.0f, 500.0f, 250.0f);
+    //FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
+    //
 
-    UWorld* const World = GetWorld();
-    if (World != nullptr)
-    {
-        TArray<TSubclassOf<ANaveEnemigo>> Naves;//Crea un TArray de subclases de ANaveEnemiga
-        Naves.Add(ANaveEnemigocaza::StaticClass()); //Agrega la subclase ANaveEnemigaCaza al TArray
-        Naves.Add(ANaveEnemigocazaAsesina::StaticClass()); //Agrega la subclase ANaveEnemigaCazaAsesina al TArray
-        Naves.Add(ANaveEnemigocazaExplosiva::StaticClass()); //Agrega la subclase ANaveEnemigaTransporte al TArray
-        Naves.Add(ANaveEnemigoEspia::StaticClass()); //Agrega la subclase ANaveEnemigaEspia al TArray
-        Naves.Add(ANaveEnemigoEspiaIncognito::StaticClass()); //Agrega la subclase ANaveEnemigaEspiaIncognito al TArray
-        Naves.Add(ANaveEnemigoEspiaSigiloso::StaticClass()); //Agrega la subclase ANaveEnemigaEspiaSigiloso al TArray
-        Naves.Add(ANaveEnemigoKamikase::StaticClass()); //Agrega la subclase ANaveEnemigaKamikase al TArray
-        Naves.Add(ANaveEnemigoKamikaseExplosivo::StaticClass()); //Agrega la subclase ANaveEnemigaKamikaseExplosivo al TArray
-        Naves.Add(ANaveEnemigoKamikaseAgil::StaticClass()); //Agrega la subclase ANaveEnemigaKamikaseAgil al TArray
-        Naves.Add(ANaveEnemigoNodriza::StaticClass()); //Agrega la subclase ANaveEnemigaNodriza al TArray
-        Naves.Add(ANaveEnemigoNodrizaReparadora::StaticClass()); //Agrega la subclase ANaveEnemigaNodrizaReparadora al TArray
-        Naves.Add(ANaveEnemigoNodrizaDisparadora::StaticClass()); //Agrega la subclase ANaveEnemigaNodrizaDisparadora al TArray
-        Naves.Add(ANaveEnemigoTransporte::StaticClass()); //Agrega la subclase ANaveEnemigaTransporte al TArray
-        Naves.Add(ANaveEnemigoTransporteExplosivos::StaticClass()); //Agrega la subclase ANaveEnemigaTransporteExplosivos al TArray
-        Naves.Add(AMyNaveEnemigoTransporteDefensora::StaticClass()); //Agrega la subclase ANaveEnemigaTransporteDefensora al TArray
-        for (int i = 0; i < 6; i++) {
-            FVector PosicionNaveActualX = FVector(ubicacionInicioNavesEnemigas.X, ubicacionInicioNavesEnemigas.Y + i * 600.0f, ubicacionInicioNavesEnemigas.Z);
 
-            for (int j = 0; j < 5; j++) {
-                FVector PosicionNaveActualY = FVector(PosicionNaveActualX.X - j * 528.5f, PosicionNaveActualX.Y, PosicionNaveActualX.Z);
 
-                //tipo de nave aleatorio
-                int32 RandomIndex = FMath::RandRange(0, Naves.Num() - 1);
-                TSubclassOf<ANaveEnemigo> NaveClass = Naves[RandomIndex]; 
+    //UWorld* const World = GetWorld();
+    //if (World != nullptr)
+    //{
+    //    TArray<TSubclassOf<ANaveEnemigo>> Naves;//Crea un TArray de subclases de ANaveEnemiga
+    //    Naves.Add(ANaveEnemigocaza::StaticClass()); //Agrega la subclase ANaveEnemigaCaza al TArray
+    //    Naves.Add(ANaveEnemigocazaAsesina::StaticClass()); //Agrega la subclase ANaveEnemigaCazaAsesina al TArray
+    //    Naves.Add(ANaveEnemigocazaExplosiva::StaticClass()); //Agrega la subclase ANaveEnemigaTransporte al TArray
+    //    Naves.Add(ANaveEnemigoEspia::StaticClass()); //Agrega la subclase ANaveEnemigaEspia al TArray
+    //    Naves.Add(ANaveEnemigoEspiaIncognito::StaticClass()); //Agrega la subclase ANaveEnemigaEspiaIncognito al TArray
+    //    Naves.Add(ANaveEnemigoEspiaSigiloso::StaticClass()); //Agrega la subclase ANaveEnemigaEspiaSigiloso al TArray
+    //    Naves.Add(ANaveEnemigoKamikase::StaticClass()); //Agrega la subclase ANaveEnemigaKamikase al TArray
+    //    Naves.Add(ANaveEnemigoKamikaseExplosivo::StaticClass()); //Agrega la subclase ANaveEnemigaKamikaseExplosivo al TArray
+    //    Naves.Add(ANaveEnemigoKamikaseAgil::StaticClass()); //Agrega la subclase ANaveEnemigaKamikaseAgil al TArray
+    //    Naves.Add(ANaveEnemigoNodriza::StaticClass()); //Agrega la subclase ANaveEnemigaNodriza al TArray
+    //    Naves.Add(ANaveEnemigoNodrizaReparadora::StaticClass()); //Agrega la subclase ANaveEnemigaNodrizaReparadora al TArray
+    //    Naves.Add(ANaveEnemigoNodrizaDisparadora::StaticClass()); //Agrega la subclase ANaveEnemigaNodrizaDisparadora al TArray
+    //    Naves.Add(ANaveEnemigoTransporte::StaticClass()); //Agrega la subclase ANaveEnemigaTransporte al TArray
+    //    Naves.Add(ANaveEnemigoTransporteExplosivos::StaticClass()); //Agrega la subclase ANaveEnemigaTransporteExplosivos al TArray
+    //    Naves.Add(AMyNaveEnemigoTransporteDefensora::StaticClass()); //Agrega la subclase ANaveEnemigaTransporteDefensora al TArray
+    //    for (int i = 0; i < 6; i++) {
+    //        FVector PosicionNaveActualX = FVector(ubicacionInicioNavesEnemigas.X, ubicacionInicioNavesEnemigas.Y + i * 600.0f, ubicacionInicioNavesEnemigas.Z);
 
-                // spawn
-                ANaveEnemigo* NaveEnemigaTemporal = World->SpawnActor<ANaveEnemigo>(NaveClass, PosicionNaveActualY, rotacionNave);//Spawnea la nave enemiga en una posicion y rotacion especifica
+    //        for (int j = 0; j < 5; j++) {
+    //            FVector PosicionNaveActualY = FVector(PosicionNaveActualX.X - j * 528.5f, PosicionNaveActualX.Y, PosicionNaveActualX.Z);
 
-               
-            }
-        }
-        tiempotranscurrido = 0;
-    }
-    GetWorldTimerManager().SetTimer(TimerHandle_SpawnCapsulas, this, &AGalaga_USFX_LAB1GameMode::SpawnCapsulas, 5.0f, true);
+    //            //tipo de nave aleatorio
+    //            int32 RandomIndex = FMath::RandRange(0, Naves.Num() - 1);
+    //            TSubclassOf<ANaveEnemigo> NaveClass = Naves[RandomIndex]; 
 
-	GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle, this, &AGalaga_USFX_LAB1GameMode::SpawnNaveEnemiga, 5.0f, true);
-    GetWorld()->GetTimerManager().SetTimer(ModifyTimerHandle, this, &AGalaga_USFX_LAB1GameMode::ModificarNaves, 6.0f, true);
+    //            // spawn
+    //            ANaveEnemigo* NaveEnemigaTemporal = World->SpawnActor<ANaveEnemigo>(NaveClass, PosicionNaveActualY, rotacionNave);//Spawnea la nave enemiga en una posicion y rotacio<n especifica
+
+    //           
+    //        }
+    //    }
+    //    tiempotranscurrido = 0;
+    //}
+   // GetWorldTimerManager().SetTimer(TimerHandle_SpawnCapsulas, this, &AGalaga_USFX_LAB1GameMode::SpawnCapsulas, 5.0f, true);
+
+	//GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle, this, &AGalaga_USFX_LAB1GameMode::SpawnNaveEnemiga, 5.0f, true);
+    //GetWorld()->GetTimerManager().SetTimer(ModifyTimerHandle, this, &AGalaga_USFX_LAB1GameMode::ModificarNaves, 6.0f, true);
+     GetWorld()->GetTimerManager().SetTimer(AgregarNaves, this, &AGalaga_USFX_LAB1GameMode::AgregarPeticiones, 7.0f, true);
 }
 
 
@@ -113,6 +121,55 @@ void AGalaga_USFX_LAB1GameMode::SpawnCapsulas()
 
     }
 }
+void AGalaga_USFX_LAB1GameMode::AgregarPeticiones()
+{
+	const int32 NumeroDeColumnas = 3;
+	const int32 NumeroDeFilas = 3;
+
+	// Crear instancias de las fábricas de naves
+	APeticionNavesAtaque* FabricaNavesAtaque = GetWorld()->SpawnActor<APeticionNavesAtaque>();
+	APeticionNavesLogisticas* FabricaNavesLogistica = GetWorld()->SpawnActor<APeticionNavesLogisticas>();
+	APeticionNavesSuicidas* FabricaNavesSuicidas = GetWorld()->SpawnActor<APeticionNavesSuicidas>();
+
+	for (int32 Fila = 0; Fila < NumeroDeFilas; ++Fila)
+	{
+		for (int32 Columna = 0; Columna < NumeroDeColumnas; ++Columna)
+		{
+			FVector SpawnLocation = FVector(Columna * 300.0f, Fila * 300.0f, 350.0f);
+			FRotator SpawnRotation = FRotator::ZeroRotator;
+
+			// Agregar naves de ataque en la primera fila
+
+		   /*     ANaveEnemigo* NaveAtaque = FabricaNavesAtaque->CrearNaves("Navecaza", SpawnLocation, SpawnRotation);
+				ANaveEnemigo* NaveAtaqueAsesina = FabricaNavesAtaque->CrearNaves("NavecazaAsesina", SpawnLocation, SpawnRotation);
+				ANaveEnemigo* NaveAtaqueExplosiva = FabricaNavesAtaque->CrearNaves("NaveNodrizaDisparadora", SpawnLocation, SpawnRotation);
+			 */
+
+			 // Agregar naves logísticas en la segunda fila
+
+		   /*      ANaveEnemigo* NaveLogistica = FabricaNavesLogistica->CrearNaves("NaveEspia", SpawnLocation, SpawnRotation);
+				 ANaveEnemigo* NaveLogisticaDefensora = FabricaNavesLogistica->CrearNaves("NaveEpiaIncognito", SpawnLocation, SpawnRotation);
+				 ANaveEnemigo* NaveLogisticaSigilosa = FabricaNavesLogistica->CrearNaves("NaveEspiaSigiloso", SpawnLocation, SpawnRotation);
+			  */
+
+			  // Agregar naves suicidas en la tercera fila
+			float RandomNumber = FMath::FRandRange(0.0f, 1.0f);
+
+			// Probabilidad de generar una nave caza o transporte (50% cada una)
+			if (RandomNumber <= 0.5f) {
+				ANaveEnemigo* NavecazaExplosiva = FabricaNavesSuicidas->CrearNaves("NaveCazaExplosiva", SpawnLocation, SpawnRotation);
+			}
+			else if (RandomNumber <= 0.75f) {
+				ANaveEnemigo* NaveSuicida = FabricaNavesSuicidas->CrearNaves("NaveKamikaseAgil", SpawnLocation, SpawnRotation);
+			}
+			else {
+				ANaveEnemigo* NaveKamikaseExplosivo = FabricaNavesSuicidas->CrearNaves("NaveKamikaseExplosivo", SpawnLocation, SpawnRotation);
+			}
+		}
+	}
+
+}
+
 void AGalaga_USFX_LAB1GameMode::AgregarNaveEnemiga(int32 ID, ANaveEnemigo* NuevaNave)
 {
 	// Verificar si ya hay una nave enemiga con el mismo ID

@@ -22,7 +22,7 @@ void ANaveEnemigoKamikaseAgil::BeginPlay()
 void ANaveEnemigoKamikaseAgil::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
+	//Mover(DeltaTime);
     if (movimiento) {
 		movimientoObstaculo();
 	}

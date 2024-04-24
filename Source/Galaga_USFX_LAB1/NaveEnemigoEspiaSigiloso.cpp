@@ -23,7 +23,7 @@ void ANaveEnemigoEspiaSigiloso::BeginPlay()
 void ANaveEnemigoEspiaSigiloso::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
+	//Mover(DeltaTime);
 	if (movimiento) {
 		movimientoObstaculo();
 	}

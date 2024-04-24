@@ -20,7 +20,7 @@ void ANaveEnemigoEspiaIncognito::BeginPlay()
 void ANaveEnemigoEspiaIncognito::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
+	//Mover(DeltaTime);
 	if (movimiento) {
 		movimientoObstaculo();
 	}
