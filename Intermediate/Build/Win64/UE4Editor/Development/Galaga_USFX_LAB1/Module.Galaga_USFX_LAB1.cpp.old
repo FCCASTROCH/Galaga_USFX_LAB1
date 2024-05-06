@@ -4,7 +4,6 @@
 #include "C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Source/Galaga_USFX_LAB1/CapsulaArmas.cpp"
 #include "C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Source/Galaga_USFX_LAB1/CapsulaEnergia.cpp"
 #include "C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Source/Galaga_USFX_LAB1/ComponenteActor.cpp"
-#include "C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Source/Galaga_USFX_LAB1/Escudo.cpp"
 #include "C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Source/Galaga_USFX_LAB1/EstadisticasJugador.cpp"
 #include "C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Source/Galaga_USFX_LAB1/Galaga_USFX_LAB1.cpp"
 #include "C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Source/Galaga_USFX_LAB1/MyNaveEnemigoTransporteDefensora.cpp"

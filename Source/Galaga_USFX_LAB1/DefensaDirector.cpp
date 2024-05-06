@@ -29,19 +29,22 @@ void ADefensaDirector::Tick(float DeltaTime)
 void ADefensaDirector::construirNaveNodriza()
 {
 
-	constructorNaves->ConstruirMovimientoDeNave();
-	constructorNaves->ConstruirPocisionNaves();
-	constructorNaves->ConstruirBarreraEscudo();
-	constructorNaves->ConstruirSpawnNaves();
+	ConstruyendoND->ConstruirMovimientoDeNave();
+	ConstruyendoND->ConstruirPocisionNaves();
+	ConstruyendoND->ConstruirBarreraEscudo();
+	ConstruyendoND->ConstruirSpawnNaves();
 }
 
 void ADefensaDirector::Construyendo(AActor* constructor)
 {
-	constructorNaves = Cast<IBNaveNodriza>(constructor);
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Constructor enviado"));
+	ConstruyendoND = Cast<IBNaveNodriza>(constructor);
+	GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Green, TEXT("Construyendo......"));
+	GEngine->AddOnScreenDebugMessage(-1, 4.f, FColor::Green, TEXT("Construyendo Escudos....."));
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Construyendo Naves....."));
+	GEngine->AddOnScreenDebugMessage(-1, 6.f, FColor::Green, TEXT("Nave Nodriza Se Retira ....."));
 }
 
 ANaveEnemigoNodriza* ADefensaDirector::obtenerNave()
 {
-	return constructorNaves->getNaveNodriza();
+	return ConstruyendoND->getNaveNodriza();
 }

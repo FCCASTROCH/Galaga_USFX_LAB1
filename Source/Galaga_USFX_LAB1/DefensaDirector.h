@@ -17,7 +17,7 @@ public:
 	// Sets default values for this actor's properties
 	ADefensaDirector();
 public:
-	IBNaveNodriza* constructorNaves;
+	IBNaveNodriza* ConstruyendoND;
 	//IBNaveNodriza* BPE;
 protected:
 	// Called when the game starts or when spawned
