@@ -6,4 +6,18 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFra
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\DefensaDirector.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\BNaveNodriza.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\BNaveNodriza.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\NaveEnemigoNodriza.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\NaveEnemigo.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\NaveEnemigo.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\construcNave.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\construcNave.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\Escudo.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Escudo.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\NaveEnemigoNodriza.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\DefensaDirector.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\BNaveNodrizaConcreto.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\BNaveNodrizaConcreto.generated.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Galaga_USFX_LAB1GameMode.generated.h

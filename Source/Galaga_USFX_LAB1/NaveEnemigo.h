@@ -15,6 +15,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* NaveEnemigoMesh;
 
+		float VidaMaxima;
+	    float VidaActual;
+		virtual void DisminuirVida(float Cantidad);
 protected:
 	float velocidad;
 	float resistencia; //Numero de disparos que puede recibir antes de ser destruido
@@ -80,9 +83,10 @@ public:
 	float distanciaObs;
 
 	virtual void movimientoObstaculo();
+	virtual void Destruirse();
 protected:
 	//Metodo virtual puro
 
-	void Mover() PURE_VIRTUAL(ANaveEnemiga::Mover, );
-	void Disparar() PURE_VIRTUAL(ANaveEnemiga::Disparar, );
+	void Mover() PURE_VIRTUAL(ANaveEnemigo::Mover, );
+	void Disparar() PURE_VIRTUAL(ANaveEnemigo::Disparar, );
 };

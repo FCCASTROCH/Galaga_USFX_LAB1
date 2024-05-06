@@ -5,3 +5,7 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFra
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/MovementComponent.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\NaveEnemigo.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\NaveEnemigo.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\Escudo.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Escudo.generated.h

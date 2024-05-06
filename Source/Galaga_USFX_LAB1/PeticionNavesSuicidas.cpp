@@ -7,23 +7,23 @@
 #include "NaveEnemigoKamikaseExplosivo.h"
 #include "NaveEnemigoKamikaseAgil.h"
 #include "NaveEnemigocazaExplosiva.h"
-ANaveEnemigo* APeticionNavesSuicidas::CrearNaves(FString NombreNave, FVector Poscision, FRotator Rotacion)
+ANaveEnemigo* APeticionNavesSuicidas::CrearNaveEnemiga(FString NombreNave)
 {
 
 	if (NombreNave == "NaveKamikaseAgil")
 	{
-		return GetWorld()->SpawnActor<ANaveEnemigoKamikaseAgil>(ANaveEnemigoKamikaseAgil::StaticClass(), Poscision, Rotacion);
+		return GetWorld()->SpawnActor<ANaveEnemigoKamikaseAgil>(ANaveEnemigoKamikaseAgil::StaticClass());
 	}
 	else if (NombreNave == "NaveCazaExplosiva")
 	{
-		return GetWorld()->SpawnActor<ANaveEnemigocazaExplosiva>(ANaveEnemigocazaExplosiva::StaticClass(), Poscision, Rotacion);
+		return GetWorld()->SpawnActor<ANaveEnemigocazaExplosiva>(ANaveEnemigocazaExplosiva::StaticClass());
 	}
 	else if (NombreNave == "NaveKamikaseExplosivo")
 	{
-		return GetWorld()->SpawnActor<ANaveEnemigoKamikaseExplosivo>(ANaveEnemigoKamikaseExplosivo::StaticClass(), Poscision, Rotacion);
+		return GetWorld()->SpawnActor<ANaveEnemigoKamikaseExplosivo>(ANaveEnemigoKamikaseExplosivo::StaticClass());
 	}
 	else if (NombreNave == "NaveKamikase") {
-		return GetWorld()->SpawnActor<ANaveEnemigoKamikase>(ANaveEnemigoKamikase::StaticClass(), Poscision, Rotacion);
+		return GetWorld()->SpawnActor<ANaveEnemigoKamikase>(ANaveEnemigoKamikase::StaticClass());
 	}
 		return nullptr;
 }

@@ -44,7 +44,7 @@ AGalaga_USFX_LAB1Pawn::AGalaga_USFX_LAB1Pawn()
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->SetUsingAbsoluteRotation(true);
-	CameraBoom->TargetArmLength = 1200.f;
+	CameraBoom->TargetArmLength = 1900.f;
 	CameraBoom->SetRelativeRotation(FRotator(-80.f, 0.f, 0.f));
 	CameraBoom->bDoCollisionTest = false;
 
@@ -59,6 +59,7 @@ AGalaga_USFX_LAB1Pawn::AGalaga_USFX_LAB1Pawn()
 	GunOffset = FVector(90.f, 0.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
+	Danio = 10.f;
 
 
 	MyInventor = CreateDefaultSubobject<UComponenteActor>("MyInventory");
@@ -87,7 +88,7 @@ AGalaga_USFX_LAB1Pawn::AGalaga_USFX_LAB1Pawn()
 	MaxProyectilesDisparados = 25; //Establece el número máximo de proyectiles disparados
 
 	//NumItems = 0;
-	InicialPosicion = FVector(-790.0f, 10.0f, 215.0f);
+	InicialPosicion = FVector(-990.0f, 10.0f, 215.0f);
 	AlturaSalto = 215 + 300.0f;
 	//Entrada para movimiento diagonal
 
@@ -465,7 +466,7 @@ void AGalaga_USFX_LAB1Pawn::ChocaYDestruye()
 {
 
 	bChocaYDestruye = true;
-	//Descactivo las banderas activadas por otras teclas
+	//Descactivo las banderas
 	bChocarYAtravesar = false;
 	bChocaYControla = false;
 	bChocaYMeDestruyo = false;
@@ -599,67 +600,76 @@ void AGalaga_USFX_LAB1Pawn::NotifyHit(class UPrimitiveComponent*
 	bool bSelfMoved, FVector HitLocation, FVector HitNormal,
 	FVector NormalImpulse, const FHitResult& Hit)
 {
-	// Intenta convertir el actor 'Other' en un puntero a un objeto
-	ACapsula* InventoryItem =Cast<ACapsula>(Other);
-	if (InventoryItem != nullptr)
-	{
-		TakeItem(InventoryItem);
-	}
+	
 	ANaveEnemigo* NaveEnemigo = Cast<ANaveEnemigo>(Other);
 	//ANaveEnemigoEspia* NaveEnemigoEspia = Cast<ANaveEnemigoEspia>(Other);
-	if (NaveEnemigo != nullptr)
-	{
-
-		if (bChocaYControla)
-		{
-			//NaveEnemigo= Cast<ANaveEnemigoEspia>(Other);
-			NaveEnemigo->movimiento = true;
-			NaveEnemigo->distanciaObs = Multiplicador * 125;
-			NaveEnemigo->movimientoObstaculo();
-			if (GEngine)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "	Tomas el Control de la Nave");
-			}
-			Multiplicador += 1;
-			return;
-		}
-		else
-		{
-			NaveEnemigo->movimiento = false;// falla algo
-		}
-	//	 NaveEnemigo->movimiento = false;// falla algo
-
-		if (bChocarYAtravesar)
-		{
-			NaveEnemigo->SetActorEnableCollision(false);
-			if (GEngine)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "ATRAVESAS");
-			}
-			return;
-		}
-		if (!bChocarYAtravesar) NaveEnemigo->SetActorEnableCollision(true);
-
-		if (bChocaYDestruye)
-		{
-			NaveEnemigo->Destroy();
-			if (GEngine)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "SE DESTRUYO ");
-			}
-			return;
-		}
-		if (bChocaYMeDestruyo)
-		{
-			Destroy();
-
-			if (GEngine)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "NAVE DESTRUIDA: FIN DEL JUEGO");
-			}
-			return;
-		}
+	if (NaveEnemigo != nullptr) {
+		NaveEnemigo->Destroy();
 	}
+
+
+
+
+
+
+
+
+
+
+
+	//if (NaveEnemigo != nullptr)
+	//{
+
+	//	if (bChocaYControla)
+	//	{
+	//		//NaveEnemigo= Cast<ANaveEnemigoEspia>(Other);
+	//		NaveEnemigo->movimiento = true;
+	//		NaveEnemigo->distanciaObs = Multiplicador * 125;
+	//		NaveEnemigo->movimientoObstaculo();
+	//		if (GEngine)
+	//		{
+	//			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, "	Tomas el Control de la Nave");
+	//		}
+	//		Multiplicador += 1;
+	//		return;
+	//	}
+	//	else
+	//	{
+	//		NaveEnemigo->movimiento = false;// falla algo
+	//	}
+	////	 NaveEnemigo->movimiento = false;// falla algo
+
+	//	if (bChocarYAtravesar)
+	//	{
+	//		NaveEnemigo->SetActorEnableCollision(false);
+	//		if (GEngine)
+	//		{
+	//			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "ATRAVESAS");
+	//		}
+	//		return;
+	//	}
+	//	if (!bChocarYAtravesar) NaveEnemigo->SetActorEnableCollision(true);
+
+	//	if (bChocaYDestruye)
+	//	{
+	//		NaveEnemigo->Destroy();
+	//		if (GEngine)
+	//		{
+	//			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "SE DESTRUYO ");
+	//		}
+	//		return;
+	//	}
+	//	if (bChocaYMeDestruyo)
+	//	{
+	//		Destroy();
+
+	//		if (GEngine)
+	//		{
+	//			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "NAVE DESTRUIDA: FIN DEL JUEGO");
+	//		}
+	//		return;
+	//	}
+	//}
 }
 
 void AGalaga_USFX_LAB1Pawn::Saltar()
@@ -736,6 +746,13 @@ void AGalaga_USFX_LAB1Pawn::TeleportToMouse()
 		SetActorLocation(HitResult.ImpactPoint);
 	}
 }
+
+void AGalaga_USFX_LAB1Pawn::ChocarDestruir(UPrimitiveComponent* HitComp, AActor* Other, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+{
+	
+}
+
+
 
 void AGalaga_USFX_LAB1Pawn::ReturnToInitialPosition()
 {

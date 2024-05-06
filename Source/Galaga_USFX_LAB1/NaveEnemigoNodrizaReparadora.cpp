@@ -26,10 +26,3 @@ void ANaveEnemigoNodrizaReparadora::Destruirse()
 {
 }
 
-void ANaveEnemigoNodrizaReparadora::Escapar()
-{
-}
-
-void ANaveEnemigoNodrizaReparadora::Atacar()
-{
-}

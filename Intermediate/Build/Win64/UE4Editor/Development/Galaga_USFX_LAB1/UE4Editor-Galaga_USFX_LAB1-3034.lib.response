@@ -1,0 +1,42 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Galaga_USFX_LAB1-3034.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\Galaga_USFX_LAB1Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\BNaveNodriza.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\BNaveNodrizaConcreto.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\construcNave.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\ConstructorNave.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\DefensaDirector.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Escudo.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Galaga_USFX_LAB1GameMode.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Galaga_USFX_LAB1Pawn.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Galaga_USFX_LAB1Projectile.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigo.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigocaza.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigocazaAsesina.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoNodriza.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoNodrizaDisparadora.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoNodrizaReparadora.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\PeticionNaves.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\PeticionNavesAtaque.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\PeticionNavesLogisticas.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\PeticionNavesSuicidas.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Module.Galaga_USFX_LAB1.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\BNaveNodriza.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\BNaveNodrizaConcreto.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\construcNave.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\ConstructorNave.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\DefensaDirector.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Galaga_USFX_LAB1.init.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Galaga_USFX_LAB1GameMode.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoNodriza.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoNodrizaDisparadora.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\NaveEnemigoNodrizaReparadora.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Module.Galaga_USFX_LAB1.gen.cpp.obj"
+"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Default.rc2.res"
+/OUT:"C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\UE4Editor-Galaga_USFX_LAB1-3034.lib"

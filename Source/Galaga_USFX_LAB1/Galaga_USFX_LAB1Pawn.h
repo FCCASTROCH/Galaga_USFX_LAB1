@@ -106,7 +106,26 @@ public:
 	void ReloadEnergy();
 	void CheckInventory();
 	void ReloadAmmo();
-	virtual void NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override;
+
+
+
+
+
+	virtual void NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, class UPrimitiveComponent* OtherComp,
+	bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	float NumProye;
 	float MaxProye;
 	float NumItems;
@@ -144,6 +163,9 @@ public:
 	void ChocaYMeDestruyo();
 	void ChocarYAtravesar();
 	void TeleportToMouse();
+
+	void ChocarDestruir(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
     FVector InicialPosicion;
 	float AlturaSalto;
 	FVector2D lastInput;
@@ -158,7 +180,7 @@ public:
 	bool bChocarYAtravesar;
 
 	void ReturnToInitialPosition();
-
+	float Danio;
 
 };
 

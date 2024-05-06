@@ -60,6 +60,11 @@ void ANaveEnemigocaza::Disparar()
 
 void ANaveEnemigocaza::Destruirse()
 {
+	// Verificar si la vida actual es menor o igual a cero
+
+		// Destruir la nave enemiga si su vida es igual o menor a cero
+		Destroy();
+
 }
 void ANaveEnemigocaza::Escapar()
 {
@@ -84,5 +89,18 @@ void ANaveEnemigocaza::movimientoObstaculo()
 
 		// Mueve el obstáculo hacia la nueva posición
 		SetActorLocation(NewPosition);
+	}
+}
+
+void ANaveEnemigocaza::DisminuirVida(float Cantidad)
+{
+	// Disminuir la vida actual
+	VidaActual -= Cantidad;
+
+	// Verificar si la vida actual es menor o igual a cero
+	if (VidaActual <= 0.f)
+	{
+		// Destruir la nave enemiga si su vida es igual o menor a cero
+		Destroy();
 	}
 }

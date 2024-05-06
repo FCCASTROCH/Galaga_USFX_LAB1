@@ -40,10 +40,12 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1GameMode() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_LAB1GameMode_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "//class ADefensaDirector;\n//class ABNaveNodrizaConcreto;\n" },
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "Galaga_USFX_LAB1GameMode.h" },
 		{ "ModuleRelativePath", "Galaga_USFX_LAB1GameMode.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
+		{ "ToolTip", "class ADefensaDirector;\nclass ABNaveNodrizaConcreto;" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGalaga_USFX_LAB1GameMode_Statics::StaticCppClassTypeInfo = {
@@ -73,7 +75,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1GameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGalaga_USFX_LAB1GameMode, 2918213163);
+	IMPLEMENT_CLASS(AGalaga_USFX_LAB1GameMode, 1497687800);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<AGalaga_USFX_LAB1GameMode>()
 	{
 		return AGalaga_USFX_LAB1GameMode::StaticClass();

@@ -23,7 +23,7 @@ public:
     virtual void Disparar() override;
 	virtual void Destruirse() override;
 	void movimientoObstaculo() override;
-
+	void DisminuirVida(float Cantidad) override;
 	//metodos propios 
 	void AtaqueEspecial();
 

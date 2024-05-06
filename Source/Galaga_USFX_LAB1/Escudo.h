@@ -14,7 +14,10 @@ class GALAGA_USFX_LAB1_API AEscudo : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AEscudo();
-
+	void SeguirNave(FVector posicion);
+	float VidaMaxima;
+	float VidaActual;
+	 void DisminuirResistencia(float Cantidad);
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

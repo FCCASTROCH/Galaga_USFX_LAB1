@@ -2,6 +2,7 @@
 
 
 #include "PeticionNaves.h"
+#include "NaveEnemigo.h"
 
 // Sets default values
 APeticionNaves::APeticionNaves()
@@ -24,10 +25,11 @@ void APeticionNaves::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-//
-//ANaveEnemigo* APeticionNaves::Peticion(FString Categoria, FVector pocision, FRotator Rotacion)
-//{
-//	ANaveEnemigo* NaveEnemigo = CrearNaves(Categoria, pocision, Rotacion);
-//
-//	return NaveEnemigo;
-//}
+ANaveEnemigo* APeticionNaves::OrdenarNaveEnemiga(FString Categoria)
+{
+	//crear una nave enemiga
+	ANaveEnemigo* NaveEnemiga = CrearNaveEnemiga(Categoria);
+	return NaveEnemiga;
+}
+
+

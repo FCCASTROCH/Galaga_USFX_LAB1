@@ -24,6 +24,31 @@ AEscudo::AEscudo()
         // Modifica la escala del componente de malla estática
         Escudo->SetWorldScale3D(FVector(1.0f, 3.0f, 1.0f)); // Aquí se ajusta la escala
     }
+    VidaMaxima = 150.f; // Puedes ajustar el valor inicial de la vida máxima
+    VidaActual = VidaMaxima; // Inicializamos la vida actual con la vida máxima al comenzar
+}
+
+void AEscudo::SeguirNave(FVector posicion)
+{/*
+	FVector posicionEscudo = GetActorLocation();
+	FVector direccion = posicion - posicionEscudo;
+
+	direccion.Normalize();
+	FRotator rotacion = direccion.Rotation();*/
+    //SetActorRotation(rotacion);
+}
+
+void AEscudo::DisminuirResistencia(float Cantidad)
+{
+    // Disminuir la vida actual
+    VidaActual -= Cantidad;
+
+    // Verificar si la vida actual es menor o igual a cero
+    if (VidaActual <= 0.f)
+    {
+        // Destruir la nave enemiga si su vida es igual o menor a cero
+        Destroy();
+    }
 }
 
 // Called when the game starts or when spawned

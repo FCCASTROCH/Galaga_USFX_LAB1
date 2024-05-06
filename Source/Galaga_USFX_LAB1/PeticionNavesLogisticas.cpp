@@ -5,20 +5,19 @@
 #include "NaveEnemigoEspia.h"
 #include "NaveEnemigoEspiaIncognito.h"
 #include "NaveEnemigoEspiaSigiloso.h"
-
-ANaveEnemigo* APeticionNavesLogisticas::CrearNaves(FString NombreNave, FVector Poscision, FRotator Rotacion)
+ANaveEnemigo* APeticionNavesLogisticas::CrearNaveEnemiga(FString NombreNave)
 {
 	if (NombreNave == "NaveEspia")
 	{
-		return GetWorld()->SpawnActor<ANaveEnemigoEspia>(ANaveEnemigoEspia::StaticClass(),Poscision, Rotacion);
+		return GetWorld()->SpawnActor<ANaveEnemigoEspia>(ANaveEnemigoEspia::StaticClass());
 	}
 	else if (NombreNave == "NaveEpiaIncognito")
 	{
-		return GetWorld()->SpawnActor<ANaveEnemigoEspiaIncognito>(ANaveEnemigoEspiaIncognito::StaticClass(),Poscision, Rotacion);
+		return GetWorld()->SpawnActor<ANaveEnemigoEspiaIncognito>(ANaveEnemigoEspiaIncognito::StaticClass());
 	}
 	else if (NombreNave == "NaveEspiaSigiloso")
 	{
-		return GetWorld()->SpawnActor<ANaveEnemigoEspiaSigiloso>(ANaveEnemigoEspiaSigiloso::StaticClass(),Poscision, Rotacion);
+		return GetWorld()->SpawnActor<ANaveEnemigoEspiaSigiloso>(ANaveEnemigoEspiaSigiloso::StaticClass());
 	}
 	else
 	{

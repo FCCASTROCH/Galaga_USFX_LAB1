@@ -6,6 +6,7 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/StaticMesh.h"
 #include "Galaga_USFX_LAB1Pawn.h"
+
 // Sets default values
 ANaveEnemigo::ANaveEnemigo()
 {
@@ -21,9 +22,23 @@ ANaveEnemigo::ANaveEnemigo()
     movimiento = false;
     distanciaObs = 0;
 	velocidad = 1;
+    VidaMaxima = 100.f; // Puedes ajustar el valor inicial de la vida máxima
+    VidaActual = VidaMaxima; // Inicializamos la vida actual con la vida máxima al comenzar
+
 }
 
+void ANaveEnemigo::DisminuirVida(float Cantidad)
+{
+    // Disminuir la vida actual
+    VidaActual -= Cantidad;
 
+    // Verificar si la vida actual es menor o igual a cero
+    if (VidaActual <= 0.f)
+    {
+        // Destruir la nave enemiga si su vida es igual o menor a cero
+        Destroy();
+    }
+}
 
 // Called when the game starts or when spawned
 void ANaveEnemigo::BeginPlay()
@@ -57,5 +72,10 @@ void ANaveEnemigo::movimientoObstaculo()
         // Mueve el obstáculo hacia la nueva posición
         SetActorLocation(NewPosition);
     }
+}
+
+void ANaveEnemigo::Destruirse()
+{
+        Destroy();
 }
 

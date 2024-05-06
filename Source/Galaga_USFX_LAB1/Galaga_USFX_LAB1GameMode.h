@@ -5,12 +5,16 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 //#include "NaveEnemigo.h"
+
+#include "DefensaDirector.h"
+#include "BNaveNodrizaConcreto.h"
 #include "Galaga_USFX_LAB1GameMode.generated.h"
 class ANaveEnemigoTransporte;
 class ANaveEnemigocaza;
 class ANave;
 class ANaveEnemigo;
-
+//class ADefensaDirector;
+//class ABNaveNodrizaConcreto;
 
 UCLASS(MinimalAPI)
 class AGalaga_USFX_LAB1GameMode : public AGameModeBase
@@ -56,6 +60,16 @@ void ModificarNaves(); // Declaración de la función ModificarNaves
 FTimerHandle SpawnTimerHandle; // Manejador del temporizador de spawn
 FTimerHandle ModifyTimerHandle; // Manejador del temporizador de agregar fila
 FTimerHandle DeleteTimerHandle; // Manejador del temporizador de eliminar naves
+int32 Cont;
+float TimerController;
+
+//UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
+
+
+//UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
+
+class ADefensaDirector* DirectorNodriza;
+class ABNaveNodrizaConcreto* BNodriza;
 };
 
 

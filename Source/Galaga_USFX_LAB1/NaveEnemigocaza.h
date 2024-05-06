@@ -36,10 +36,13 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	void DisminuirVida(float Cantidad) override;
+
+	virtual void Destruirse() override;
 protected:
 	virtual void Mover(float DeltaTime);
 	virtual void Disparar();
-	virtual void Destruirse();
+	
 	virtual void Escapar();
 	virtual void Atacar();
 	void movimientoObstaculo() override;

@@ -64,3 +64,16 @@ void ANaveEnemigocazaAsesina::Destruirse()
 void ANaveEnemigocazaAsesina::AtaqueEspecial()
 {
 }
+
+void ANaveEnemigocazaAsesina::DisminuirVida(float Cantidad)
+{
+	// Disminuir la vida actual
+	VidaActual -= Cantidad;
+
+	// Verificar si la vida actual es menor o igual a cero
+	if (VidaActual <= 0.f)
+	{
+		// Destruir la nave enemiga si su vida es igual o menor a cero
+		Destroy();
+	}
+}

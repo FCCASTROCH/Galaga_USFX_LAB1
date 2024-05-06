@@ -28,18 +28,37 @@
 #include "PeticionNavesAtaque.h"
 #include "PeticionNavesSuicidas.h"
 #include "PeticionNavesLogisticas.h"
-
+#include "DefensaDirector.h"
+#include "BNaveNodrizaConcreto.h"
 AGalaga_USFX_LAB1GameMode::AGalaga_USFX_LAB1GameMode()
 {
 	// set default pawn class to our character class
 	PrimaryActorTick.bCanEverTick = true;
 	DefaultPawnClass = AGalaga_USFX_LAB1Pawn::StaticClass();
 	NaveEnemigo1 = 0;
+	Cont = 1;
+	TimerController = 0.0f;
+
 }
 void AGalaga_USFX_LAB1GameMode::BeginPlay()
 {
     Super::BeginPlay();
-  
+	DirectorNodriza = GetWorld()->SpawnActor<ADefensaDirector>(ADefensaDirector::StaticClass());
+	BNodriza = GetWorld()->SpawnActor<ABNaveNodrizaConcreto>(ABNaveNodrizaConcreto::StaticClass());
+	
+	DirectorNodriza->Construyendo(BNodriza);
+	DirectorNodriza->construirNaveNodriza();
+	ANaveEnemigoNodriza* NaveNodriza = DirectorNodriza->obtenerNave();
+	//NaveNodriza->SetActorScale3D(FVector(0.5f, 0.5f, 250.f));
+	NaveNodriza->GetPosicionesNaves();
+	NaveNodriza->GetNavesEnemigas();
+	//posicionCapsulasEnemigas = NaveNodriza->GetPosicionesNaves();
+	//NavesEnemigas = NaveNodriza->GetNavesEnemigas();
+
+	/*ConstructorPaquetesEnergia = GetWorld()->SpawnActor<ABNaveNodrizaConcreto>(ABNaveNodrizaConcreto::StaticClass());
+	Director = GetWorld()->SpawnActor<ADefensaDirector>(ADefensaDirector::StaticClass());
+	*/
+		
     //FVector ubicacionInicioNavesEnemigas = FVector(1850.0f, -1540.7f, 250.0f);
     //FVector ubicacionInicioNavesEnemigasTransporte = FVector(500.0f, 500.0f, 250.0f);
     //FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
@@ -84,11 +103,11 @@ void AGalaga_USFX_LAB1GameMode::BeginPlay()
     //    }
     //    tiempotranscurrido = 0;
     //}
-   // GetWorldTimerManager().SetTimer(TimerHandle_SpawnCapsulas, this, &AGalaga_USFX_LAB1GameMode::SpawnCapsulas, 5.0f, true);
+  // GetWorldTimerManager().SetTimer(TimerHandle_SpawnCapsulas, this, &AGalaga_USFX_LAB1GameMode::SpawnCapsulas, 5.0f, true);
 
 	//GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle, this, &AGalaga_USFX_LAB1GameMode::SpawnNaveEnemiga, 5.0f, true);
     //GetWorld()->GetTimerManager().SetTimer(ModifyTimerHandle, this, &AGalaga_USFX_LAB1GameMode::ModificarNaves, 6.0f, true);
-     GetWorld()->GetTimerManager().SetTimer(AgregarNaves, this, &AGalaga_USFX_LAB1GameMode::AgregarPeticiones, 7.0f, true);
+     //GetWorld()->GetTimerManager().SetTimer(AgregarNaves, this, &AGalaga_USFX_LAB1GameMode::AgregarPeticiones, 7.0f, true);
 }
 
 
@@ -96,6 +115,8 @@ void AGalaga_USFX_LAB1GameMode::BeginPlay()
 void AGalaga_USFX_LAB1GameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	
 	
 }
 void AGalaga_USFX_LAB1GameMode::SpawnCapsulas()
@@ -157,13 +178,13 @@ void AGalaga_USFX_LAB1GameMode::AgregarPeticiones()
 
 			// Probabilidad de generar una nave caza o transporte (50% cada una)
 			if (RandomNumber <= 0.5f) {
-				ANaveEnemigo* NavecazaExplosiva = FabricaNavesSuicidas->CrearNaves("NaveCazaExplosiva", SpawnLocation, SpawnRotation);
+				ANaveEnemigo* NavecazaExplosiva = FabricaNavesSuicidas->CrearNaveEnemiga("NaveKamikase");
 			}
 			else if (RandomNumber <= 0.75f) {
-				ANaveEnemigo* NaveSuicida = FabricaNavesSuicidas->CrearNaves("NaveKamikaseAgil", SpawnLocation, SpawnRotation);
+				ANaveEnemigo* NaveSuicida = FabricaNavesSuicidas->CrearNaveEnemiga("NaveKamikaseAgil");
 			}
 			else {
-				ANaveEnemigo* NaveKamikaseExplosivo = FabricaNavesSuicidas->CrearNaves("NaveKamikaseExplosivo", SpawnLocation, SpawnRotation);
+				ANaveEnemigo* NaveKamikaseExplosivo = FabricaNavesSuicidas->CrearNaveEnemiga("NaveKamikaseExplosivo");
 			}
 		}
 	}
@@ -194,7 +215,7 @@ void AGalaga_USFX_LAB1GameMode::SpawnNaveEnemiga()
 	{
 		for (int32 Fila = 0; Fila < NumeroDeFilas; ++Fila)
 		{
-			FVector SpawnLocation = FVector(Columna * 200.0f, Fila * 100.0f, 350.0f);
+			FVector SpawnLocation = FVector(Columna * 200.0f, Fila * 100.0f, 210.0f);
 			FRotator SpawnRotation = FRotator::ZeroRotator;
 
 			// Verificar si ya existe una nave enemiga con el ID correspondiente
