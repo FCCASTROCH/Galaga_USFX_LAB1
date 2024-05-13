@@ -33,6 +33,7 @@ public:
 private:
 	int tiempotranscurrido;
 public:
+	// Inicializada como falsa
 	TArray<ANaveEnemigocaza*> TANavesEnemigasCaza;
 //	FString GetUniqueNameForNave(); // Declaración de la función aquí
 	//TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
@@ -69,7 +70,8 @@ float TimerController;
 //UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
 
 class ADefensaDirector* DirectorNodriza;
-class ABNaveNodrizaConcreto* BNodriza;
+class ABNaveNodrizaConcreto* BNave1;
+class AConstructorNave* BNave;
 };
 
 

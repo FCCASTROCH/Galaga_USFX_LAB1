@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructorNave() {}
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_AConstructorNave();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX_LAB1();
+	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_UBNaveNodriza_NoRegister();
 // End Cross Module References
 	void AConstructorNave::StaticRegisterNativesAConstructorNave()
 	{
@@ -31,6 +32,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructorNave() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -44,6 +46,9 @@ void EmptyLinkFunctionForGeneratedCodeConstructorNave() {}
 		{ "ModuleRelativePath", "ConstructorNave.h" },
 	};
 #endif
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AConstructorNave_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UBNaveNodriza_NoRegister, (int32)VTABLE_OFFSET(AConstructorNave, IBNaveNodriza), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AConstructorNave_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AConstructorNave>::IsAbstract,
 	};
@@ -54,11 +59,11 @@ void EmptyLinkFunctionForGeneratedCodeConstructorNave() {}
 		DependentSingletons,
 		nullptr,
 		nullptr,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		0,
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AConstructorNave_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AConstructorNave_Statics::Class_MetaDataParams))
 	};
@@ -71,7 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructorNave() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AConstructorNave, 3906990940);
+	IMPLEMENT_CLASS(AConstructorNave, 3170752143);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<AConstructorNave>()
 	{
 		return AConstructorNave::StaticClass();

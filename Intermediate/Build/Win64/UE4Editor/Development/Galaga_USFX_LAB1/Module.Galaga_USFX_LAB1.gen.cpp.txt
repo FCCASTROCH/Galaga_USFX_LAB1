@@ -27,11 +27,10 @@ C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\
 C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/construcNave.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/construcNave.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\construcNave.generated.h
-C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/ConstructorNave.gen.cpp
-C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/ConstructorNave.h
-C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\ConstructorNave.generated.h
 C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/DefensaDirector.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/DefensaDirector.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\ConstructorNave.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\ConstructorNave.generated.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\NaveEnemigoNodriza.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\NaveEnemigo.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\NaveEnemigo.generated.h
@@ -39,11 +38,9 @@ C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\E
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Escudo.generated.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\NaveEnemigoNodriza.generated.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\DefensaDirector.generated.h
-C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/Escudo.gen.cpp
 C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/EstadisticasJugador.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/EstadisticasJugador.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\EstadisticasJugador.generated.h
-C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/Galaga_USFX_LAB1.init.gen.cpp
 C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/Galaga_USFX_LAB1GameMode.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/Galaga_USFX_LAB1GameMode.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h

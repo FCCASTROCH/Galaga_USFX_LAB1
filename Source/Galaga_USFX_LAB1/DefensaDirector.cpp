@@ -41,7 +41,9 @@ void ADefensaDirector::Construyendo(AActor* constructor)
 	GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Green, TEXT("Construyendo......"));
 	GEngine->AddOnScreenDebugMessage(-1, 4.f, FColor::Green, TEXT("Construyendo Escudos....."));
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Construyendo Naves....."));
-	GEngine->AddOnScreenDebugMessage(-1, 6.f, FColor::Green, TEXT("Nave Nodriza Se Retira ....."));
+	GEngine->AddOnScreenDebugMessage(-1, 6.f, FColor::Green, TEXT("Nave Se Retira ....."));
+
+	//otro nave
 }
 
 ANaveEnemigoNodriza* ADefensaDirector::obtenerNave()

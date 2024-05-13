@@ -16,9 +16,11 @@ ABNaveNodrizaConcreto::ABNaveNodrizaConcreto()
 void ABNaveNodrizaConcreto::BeginPlay()
 {
 	Super::BeginPlay();
+
 	naveNodriza = GetWorld()->SpawnActor<ANaveEnemigoNodriza>(ANaveEnemigoNodriza::StaticClass(), FVector(-900, 1250, 255), FRotator(0, 0, 0));
-	naveNodriza->SetActorScale3D(FVector(0.5, 0.5, 0.5));
+	naveNodriza->SetActorScale3D(FVector(1.5, 1.5, 1.5));
 	naveNodriza->SetTipoMovimiento("Movimiento 1");
+	naveNodriza->SetBarrera("Barrera 1");
 }
 
 // Called every frame

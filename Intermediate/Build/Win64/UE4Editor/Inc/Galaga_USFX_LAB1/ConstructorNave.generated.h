@@ -22,7 +22,8 @@ private: \
 	friend struct Z_Construct_UClass_AConstructorNave_Statics; \
 public: \
 	DECLARE_CLASS(AConstructorNave, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Galaga_USFX_LAB1"), NO_API) \
-	DECLARE_SERIALIZER(AConstructorNave)
+	DECLARE_SERIALIZER(AConstructorNave) \
+	virtual UObject* _getUObject() const override { return const_cast<AConstructorNave*>(this); }
 
 
 #define Galaga_USFX_LAB1_Source_Galaga_USFX_LAB1_ConstructorNave_h_13_INCLASS \
@@ -31,7 +32,8 @@ private: \
 	friend struct Z_Construct_UClass_AConstructorNave_Statics; \
 public: \
 	DECLARE_CLASS(AConstructorNave, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Galaga_USFX_LAB1"), NO_API) \
-	DECLARE_SERIALIZER(AConstructorNave)
+	DECLARE_SERIALIZER(AConstructorNave) \
+	virtual UObject* _getUObject() const override { return const_cast<AConstructorNave*>(this); }
 
 
 #define Galaga_USFX_LAB1_Source_Galaga_USFX_LAB1_ConstructorNave_h_13_STANDARD_CONSTRUCTORS \

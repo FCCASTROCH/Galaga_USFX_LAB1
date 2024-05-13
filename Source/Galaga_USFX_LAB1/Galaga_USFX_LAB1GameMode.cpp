@@ -44,14 +44,17 @@ void AGalaga_USFX_LAB1GameMode::BeginPlay()
 {
     Super::BeginPlay();
 	DirectorNodriza = GetWorld()->SpawnActor<ADefensaDirector>(ADefensaDirector::StaticClass());
-	BNodriza = GetWorld()->SpawnActor<ABNaveNodrizaConcreto>(ABNaveNodrizaConcreto::StaticClass());
-	
-	DirectorNodriza->Construyendo(BNodriza);
+	BNave1 = GetWorld()->SpawnActor<ABNaveNodrizaConcreto>(ABNaveNodrizaConcreto::StaticClass());
+	BNave = GetWorld()->SpawnActor<AConstructorNave>(AConstructorNave::StaticClass());
+
+	DirectorNodriza->Construyendo(BNave1);
 	DirectorNodriza->construirNaveNodriza();
-	ANaveEnemigoNodriza* NaveNodriza = DirectorNodriza->obtenerNave();
-	//NaveNodriza->SetActorScale3D(FVector(0.5f, 0.5f, 250.f));
-	NaveNodriza->GetPosicionesNaves();
-	NaveNodriza->GetNavesEnemigas();
+	ANaveEnemigoNodriza* Nave = DirectorNodriza->obtenerNave();
+
+	DirectorNodriza->Construyendo(BNave);
+	DirectorNodriza->construirNaveNodriza();
+	ANaveEnemigoNodriza* Nave2 = DirectorNodriza->obtenerNave();
+
 	//posicionCapsulasEnemigas = NaveNodriza->GetPosicionesNaves();
 	//NavesEnemigas = NaveNodriza->GetNavesEnemigas();
 
