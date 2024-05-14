@@ -21,6 +21,7 @@
 #include "NaveEnemigoTransporte.h"
 #include "SceneComponentSpawn.h"
 #include "Escudo.h"
+
 // Declara los nombres de las acciones de entrada
 const FName AGalaga_USFX_LAB1Pawn::MoveForwardBinding("MoveForward");
 const FName AGalaga_USFX_LAB1Pawn::MoveRightBinding("MoveRight");
@@ -790,4 +791,18 @@ void AGalaga_USFX_LAB1Pawn::ReturnToInitialPosition()
 		// Llama a esta función nuevamente en el siguiente fotograma
 		GetWorldTimerManager().SetTimerForNextTick([this]() { ReturnToInitialPosition(); });
 	}
+}
+
+void AGalaga_USFX_LAB1Pawn::SetBounceBall(AActor* _Adaptador)
+{
+	BounceBal = Cast<IIBounceBall>(_Adaptador);
+	if (!BounceBal) {
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("No se realizo el casteo")));
+		return;
+	}
+}
+
+void AGalaga_USFX_LAB1Pawn::Lanzar()
+{
+	BounceBal->Lanzar();
 }

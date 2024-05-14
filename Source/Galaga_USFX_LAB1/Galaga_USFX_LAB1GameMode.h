@@ -72,6 +72,12 @@ float TimerController;
 class ADefensaDirector* DirectorNodriza;
 class ABNaveNodrizaConcreto* BNave1;
 class AConstructorNave* BNave;
+//clase adapter
+UPROPERTY(VisibleAnywhere, Category = "Game mode")
+class AGalaga_USFX_LAB1Pawn* Jugador;
+
+UPROPERTY(VisibleAnywhere, Category = "Game mode")
+class AAdapter* Adaptador;
 };
 
 

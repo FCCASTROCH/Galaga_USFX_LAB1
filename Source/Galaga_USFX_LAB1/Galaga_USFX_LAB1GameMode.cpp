@@ -2,6 +2,7 @@
 
 #include "Galaga_USFX_LAB1GameMode.h"
 #include "Galaga_USFX_LAB1Pawn.h"
+#include "Kismet/GameplayStatics.h"
 #include "NaveEnemigo.h"
 #include "Nave.h"
 #include "NaveEnemigoTransporte.h"
@@ -30,6 +31,8 @@
 #include "PeticionNavesLogisticas.h"
 #include "DefensaDirector.h"
 #include "BNaveNodrizaConcreto.h"
+#include "Adapter.h"
+
 AGalaga_USFX_LAB1GameMode::AGalaga_USFX_LAB1GameMode()
 {
 	// set default pawn class to our character class
@@ -55,9 +58,15 @@ void AGalaga_USFX_LAB1GameMode::BeginPlay()
 	DirectorNodriza->construirNaveNodriza();
 	ANaveEnemigoNodriza* Nave2 = DirectorNodriza->obtenerNave();
 
+
+
+	//Adaptador
+	Jugador = Cast<AGalaga_USFX_LAB1Pawn>(UGameplayStatics::GetPlayerPawn(GetWorld(), 0));
+	Adaptador = GetWorld()->SpawnActor<AAdapter>(AAdapter::StaticClass(), FVector(0, 0, 0), FRotator::ZeroRotator);
+	Jugador->SetBounceBall(Adaptador);
+	Jugador->Lanzar();
 	//posicionCapsulasEnemigas = NaveNodriza->GetPosicionesNaves();
 	//NavesEnemigas = NaveNodriza->GetNavesEnemigas();
-
 	/*ConstructorPaquetesEnergia = GetWorld()->SpawnActor<ABNaveNodrizaConcreto>(ABNaveNodrizaConcreto::StaticClass());
 	Director = GetWorld()->SpawnActor<ADefensaDirector>(ADefensaDirector::StaticClass());
 	*/

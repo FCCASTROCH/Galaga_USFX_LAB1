@@ -25,6 +25,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_USceneComponentSpawn_NoRegister();
 	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_UComponenteActor_NoRegister();
+	GALAGA_USFX_LAB1_API UClass* Z_Construct_UClass_UIBounceBall_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(AGalaga_USFX_LAB1Pawn::execTakeItem)
 	{
@@ -152,6 +153,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MyInventor;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -271,6 +273,9 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_SceneComponentSpawn,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::NewProp_MyInventor,
 	};
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UIBounceBall_NoRegister, (int32)VTABLE_OFFSET(AGalaga_USFX_LAB1Pawn, IIBounceBall), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AGalaga_USFX_LAB1Pawn>::IsAbstract,
 	};
@@ -281,11 +286,11 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 		DependentSingletons,
 		FuncInfo,
 		Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::PropPointers,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::PropPointers),
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x008000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_LAB1Pawn_Statics::Class_MetaDataParams))
 	};
@@ -298,7 +303,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_LAB1Pawn() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGalaga_USFX_LAB1Pawn, 2582481802);
+	IMPLEMENT_CLASS(AGalaga_USFX_LAB1Pawn, 3016345690);
 	template<> GALAGA_USFX_LAB1_API UClass* StaticClass<AGalaga_USFX_LAB1Pawn>()
 	{
 		return AGalaga_USFX_LAB1Pawn::StaticClass();

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX_LAB1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{F6EB0210-BA0E-45A0-850B-8F945BD58012}</UniqueIdentifier>
+      <UniqueIdentifier>{C7DAFA82-1B18-433B-A79E-638AE03B8FB6}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX_LAB1.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{1A5E4A6E-BBA2-4B74-BD86-E8F0FEC1C207}</UniqueIdentifier>
+      <UniqueIdentifier>{D4CA4936-97EE-46A3-B9D6-FC2642B33582}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,8 +32,20 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX_LAB1">
-      <UniqueIdentifier>{E45208E6-B713-4E27-9857-3FDBB5731276}</UniqueIdentifier>
+      <UniqueIdentifier>{99C311AC-2CEC-40FC-A7AA-7C9881464E8E}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\Adapter.cpp">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\Adapter.h">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\Ball.cpp">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\Ball.h">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\BNaveNodriDisparadora.cpp">
       <Filter>Source\Galaga_USFX_LAB1</Filter>
     </ClCompile>
@@ -137,6 +149,12 @@
       <Filter>Source\Galaga_USFX_LAB1</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\Galaga_USFX_LAB1Projectile.h">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\IBounceBall.cpp">
+      <Filter>Source\Galaga_USFX_LAB1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX_LAB1\IBounceBall.h">
       <Filter>Source\Galaga_USFX_LAB1</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Galaga_USFX_LAB1\MyNaveEnemigoTransporteDefensora.cpp">

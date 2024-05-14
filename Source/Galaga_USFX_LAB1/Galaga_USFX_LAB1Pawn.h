@@ -6,12 +6,13 @@
 #include "GameFramework/Character.h"
 #include "ComponenteActor.h"
 #include "SceneComponentSpawn.h"
+#include "IBounceBall.h"
 #include "GameFramework/PlayerInput.h"
 #include "Galaga_USFX_LAB1Pawn.generated.h"
 
 
 UCLASS(Blueprintable)
-class AGalaga_USFX_LAB1Pawn : public APawn
+class AGalaga_USFX_LAB1Pawn : public APawn, public IIBounceBall
 {
 	GENERATED_BODY()
 
@@ -114,18 +115,6 @@ public:
 	virtual void NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, class UPrimitiveComponent* OtherComp,
 	bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override;
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	float NumProye;
 	float MaxProye;
 	float NumItems;
@@ -178,9 +167,12 @@ public:
 	bool bChocaYControla;
 	bool bChocaYMeDestruyo;
 	bool bChocarYAtravesar;
-
 	void ReturnToInitialPosition();
 	float Danio;
 
+	//Patron adapter
+	class IIBounceBall* BounceBal;
+	void SetBounceBall(AActor* _Adaptador);
+	void Lanzar() override;
 };
 
