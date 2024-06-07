@@ -65,8 +65,9 @@ int32 Cont;
 float TimerController;
 
 //UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
-
-
+TArray<FString >naves;
+TArray<FString >navetransporte;
+TArray<FString >abastecimiento;
 //UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
 
 class ADefensaDirector* DirectorNodriza;

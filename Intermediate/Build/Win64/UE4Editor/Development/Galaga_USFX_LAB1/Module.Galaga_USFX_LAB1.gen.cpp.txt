@@ -1,7 +1,15 @@
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_LAB1\Definitions.Galaga_USFX_LAB1.h
-C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/BNaveNodriDisparadora.gen.cpp
+C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/Adapter.gen.cpp
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/Adapter.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\IBounceBall.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\IBounceBall.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Adapter.generated.h
+C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/Ball.gen.cpp
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/Ball.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Ball.generated.h
+C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/BNaveNodriDisparadora.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/BNaveNodriDisparadora.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\BNaveNodriDisparadora.generated.h
 C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/BNaveNodriza.gen.cpp
@@ -46,9 +54,33 @@ C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/
 C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/EstadisticasJugador.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/EstadisticasJugador.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\EstadisticasJugador.generated.h
+C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/Galaga_USFX_LAB1.init.gen.cpp
+C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/Galaga_USFX_LAB1GameMode.gen.cpp
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/Galaga_USFX_LAB1GameMode.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Galaga_USFX_LAB1GameMode.generated.h
+C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/Galaga_USFX_LAB1Pawn.gen.cpp
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/Galaga_USFX_LAB1Pawn.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\SceneComponentSpawn.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\SceneComponentSpawn.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/PlayerInput.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\GestureRecognizer.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\KeyState.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\PlayerInput.generated.h
+C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Galaga_USFX_LAB1Pawn.generated.h
 C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/Galaga_USFX_LAB1Projectile.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/Galaga_USFX_LAB1Projectile.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\Galaga_USFX_LAB1Projectile.generated.h
+C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/IBounceBall.gen.cpp
 C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/MyNaveEnemigoTransporteDefensora.gen.cpp
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/MyNaveEnemigoTransporteDefensora.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1\NaveEnemigoTransporte.h
@@ -127,5 +159,3 @@ C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/ProyectilEnemigo.h
 C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\ProyectilEnemigo.generated.h
 C:/Users/HP/Documents/Unreal Projects/Galaga_USFX_LAB1/Intermediate/Build/Win64/UE4Editor/Inc/Galaga_USFX_LAB1/SceneComponentSpawn.gen.cpp
-C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Source\Galaga_USFX_LAB1/SceneComponentSpawn.h
-C:\Users\HP\Documents\Unreal Projects\Galaga_USFX_LAB1\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_LAB1\SceneComponentSpawn.generated.h

@@ -46,30 +46,35 @@ AGalaga_USFX_LAB1GameMode::AGalaga_USFX_LAB1GameMode()
 void AGalaga_USFX_LAB1GameMode::BeginPlay()
 {
     Super::BeginPlay();
+	//clase directora
 	DirectorNodriza = GetWorld()->SpawnActor<ADefensaDirector>(ADefensaDirector::StaticClass());
+	//builder
 	BNave1 = GetWorld()->SpawnActor<ABNaveNodrizaConcreto>(ABNaveNodrizaConcreto::StaticClass());
+	//builder2
 	BNave = GetWorld()->SpawnActor<AConstructorNave>(AConstructorNave::StaticClass());
-
+	//crea primer builder
 	DirectorNodriza->Construyendo(BNave1);
 	DirectorNodriza->construirNaveNodriza();
 	ANaveEnemigoNodriza* Nave = DirectorNodriza->obtenerNave();
-
+	//crea segundo bulder
 	DirectorNodriza->Construyendo(BNave);
 	DirectorNodriza->construirNaveNodriza();
 	ANaveEnemigoNodriza* Nave2 = DirectorNodriza->obtenerNave();
 
 
 
-	//Adaptador
+	//Adaptador del bounce ball
 	Jugador = Cast<AGalaga_USFX_LAB1Pawn>(UGameplayStatics::GetPlayerPawn(GetWorld(), 0));
 	Adaptador = GetWorld()->SpawnActor<AAdapter>(AAdapter::StaticClass(), FVector(0, 0, 0), FRotator::ZeroRotator);
 	Jugador->SetBounceBall(Adaptador);
 	Jugador->Lanzar();
+
+
 	//posicionCapsulasEnemigas = NaveNodriza->GetPosicionesNaves();
 	//NavesEnemigas = NaveNodriza->GetNavesEnemigas();
 	/*ConstructorPaquetesEnergia = GetWorld()->SpawnActor<ABNaveNodrizaConcreto>(ABNaveNodrizaConcreto::StaticClass());
-	Director = GetWorld()->SpawnActor<ADefensaDirector>(ADefensaDirector::StaticClass());
-	*/
+	Director = GetWorld()->SpawnActor<ADefensaDirector>(ADefensaDirector::StaticClass());*/
+	
 		
     //FVector ubicacionInicioNavesEnemigas = FVector(1850.0f, -1540.7f, 250.0f);
     //FVector ubicacionInicioNavesEnemigasTransporte = FVector(500.0f, 500.0f, 250.0f);
@@ -156,50 +161,56 @@ void AGalaga_USFX_LAB1GameMode::SpawnCapsulas()
 }
 void AGalaga_USFX_LAB1GameMode::AgregarPeticiones()
 {
-	const int32 NumeroDeColumnas = 3;
+	const int32 NumeroDeColumnas = 4;
 	const int32 NumeroDeFilas = 3;
 
 	// Crear instancias de las fábricas de naves
-	APeticionNavesAtaque* FabricaNavesAtaque = GetWorld()->SpawnActor<APeticionNavesAtaque>();
-	APeticionNavesLogisticas* FabricaNavesLogistica = GetWorld()->SpawnActor<APeticionNavesLogisticas>();
-	APeticionNavesSuicidas* FabricaNavesSuicidas = GetWorld()->SpawnActor<APeticionNavesSuicidas>();
+	APeticionNavesAtaque* FabricaNavesAtaque = GetWorld()->SpawnActor<APeticionNavesAtaque>(FVector(40,20,314),FRotator(0,0,0));
+	APeticionNavesLogisticas* FabricaNavesLogistica = GetWorld()->SpawnActor<APeticionNavesLogisticas>(FVector(400, 20, 314), FRotator(0, 0, 0));
+	APeticionNavesSuicidas* FabricaNavesSuicidas = GetWorld()->SpawnActor<APeticionNavesSuicidas>(FVector(40, 200, 314), FRotator(0, 0, 0));
+	naves.Add("NaveCaza");
+	navetransporte.Add("transporte");
+	abastecimiento.Add("abastecimiento");
 
-	for (int32 Fila = 0; Fila < NumeroDeFilas; ++Fila)
-	{
-		for (int32 Columna = 0; Columna < NumeroDeColumnas; ++Columna)
-		{
-			FVector SpawnLocation = FVector(Columna * 300.0f, Fila * 300.0f, 350.0f);
-			FRotator SpawnRotation = FRotator::ZeroRotator;
 
-			// Agregar naves de ataque en la primera fila
 
-		   /*     ANaveEnemigo* NaveAtaque = FabricaNavesAtaque->CrearNaves("Navecaza", SpawnLocation, SpawnRotation);
-				ANaveEnemigo* NaveAtaqueAsesina = FabricaNavesAtaque->CrearNaves("NavecazaAsesina", SpawnLocation, SpawnRotation);
-				ANaveEnemigo* NaveAtaqueExplosiva = FabricaNavesAtaque->CrearNaves("NaveNodrizaDisparadora", SpawnLocation, SpawnRotation);
-			 */
+	//for (int32 Fila = 0; Fila < NumeroDeFilas; ++Fila)
+	//{
+	//	for (int32 Columna = 0; Columna < NumeroDeColumnas; ++Columna)
+	//	{
+	//		FVector SpawnLocation = FVector(Columna * 300.0f, Fila * 300.0f, 350.0f);
+	//		FRotator SpawnRotation = FRotator::ZeroRotator;
 
-			 // Agregar naves logísticas en la segunda fila
+	//		 //Agregar naves de ataque en la primera fila
 
-		   /*      ANaveEnemigo* NaveLogistica = FabricaNavesLogistica->CrearNaves("NaveEspia", SpawnLocation, SpawnRotation);
-				 ANaveEnemigo* NaveLogisticaDefensora = FabricaNavesLogistica->CrearNaves("NaveEpiaIncognito", SpawnLocation, SpawnRotation);
-				 ANaveEnemigo* NaveLogisticaSigilosa = FabricaNavesLogistica->CrearNaves("NaveEspiaSigiloso", SpawnLocation, SpawnRotation);
-			  */
+	//	       ANaveEnemigo* NaveAtaque = FabricaNavesAtaque->CrearNaveEnemiga("Navecaza");
+	//			ANaveEnemigo* NaveAtaqueAsesina = FabricaNavesAtaque->CrearNaveEnemiga("NavecazaAsesina");
+	//			ANaveEnemigo* NaveAtaqueExplosiva = FabricaNavesAtaque->CrearNaveEnemiga("NaveNodrizaDisparadora");
+	//		 
 
-			  // Agregar naves suicidas en la tercera fila
-			float RandomNumber = FMath::FRandRange(0.0f, 1.0f);
+	//		 // Agregar naves logísticas en la segunda fila
 
-			// Probabilidad de generar una nave caza o transporte (50% cada una)
-			if (RandomNumber <= 0.5f) {
-				ANaveEnemigo* NavecazaExplosiva = FabricaNavesSuicidas->CrearNaveEnemiga("NaveKamikase");
-			}
-			else if (RandomNumber <= 0.75f) {
-				ANaveEnemigo* NaveSuicida = FabricaNavesSuicidas->CrearNaveEnemiga("NaveKamikaseAgil");
-			}
-			else {
-				ANaveEnemigo* NaveKamikaseExplosivo = FabricaNavesSuicidas->CrearNaveEnemiga("NaveKamikaseExplosivo");
-			}
-		}
-	}
+	//	       ANaveEnemigo* NaveLogistica = FabricaNavesLogistica->CrearNaveEnemiga("NaveEspia");
+	//			 ANaveEnemigo* NaveLogisticaDefensora = FabricaNavesLogistica->CrearNaveEnemiga("NaveEpiaIncognito");
+	//			 ANaveEnemigo* NaveLogisticaSigilosa = FabricaNavesLogistica->CrearNaveEnemiga("NaveEspiaSigiloso");
+	//		  
+
+	//		  // Agregar naves suicidas en la tercera fila
+	//		float RandomNumber = FMath::FRandRange(0.0f, 1.0f);
+
+	//		// Probabilidad de generar una nave caza o transporte (50% cada una)
+	//		if (RandomNumber <= 0.5f) {
+	//			ANaveEnemigo* NavecazaExplosiva = FabricaNavesSuicidas->CrearNaveEnemiga("NaveKamikase");
+	//		}
+	//		else if (RandomNumber <= 0.75f) {
+	//			ANaveEnemigo* NaveSuicida = FabricaNavesSuicidas->CrearNaveEnemiga("NaveKamikaseAgil");
+	//			//NaveSuicida->GetActorRelativeScale3D(,,)
+	//		}
+	//		else {
+	//			ANaveEnemigo* NaveKamikaseExplosivo = FabricaNavesSuicidas->CrearNaveEnemiga("NaveKamikaseExplosivo");
+	//		}
+	//	}
+	//}
 
 }
 

@@ -150,7 +150,7 @@ void ANaveEnemigoNodriza::PocisionNaves(FString forma)
     {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                FVector PosicionNaveActual = FVector(UbicacionDeInici.X - j * 600.0f, UbicacionDeInici.Y + i * 600.0f, UbicacionDeInici.Z);
+                FVector PosicionNaveActual = FVector(UbicacionDeInici.X - j * 600.0f, UbicacionDeInici.Y + i * 600.0f, UbicacionDeInici.Z+200.0f);
                 PosicionesNaves.Add(PosicionNaveActual);
             }
         }
@@ -160,13 +160,13 @@ void ANaveEnemigoNodriza::PocisionNaves(FString forma)
             for (int i = 0; i < 6; i++) {
         FVector PosicionNaveActualX = FVector(UbicacionDeInicio.X, UbicacionDeInicio.Y + i * 600.0f, UbicacionDeInicio.Z);
 
-        for (int j = 0; j < 3; j++) {
+        for (int j = 0; j < 4; j++) {
             FVector PosicionNaveActualY = FVector(PosicionNaveActualX.X - j * 528.5f, PosicionNaveActualX.Y, PosicionNaveActualX.Z);
             if ((i == 0 || i == 5) && j == 0)
                 PosicionesNaves.Add(PosicionNaveActualY);
-            if ((i == 1 || i == 4) && (j == 0 || j == 1))
+            if ((i == 1 || i == 3) && (j == 0 || j == 1))
                 PosicionesNaves.Add(PosicionNaveActualY);
-            if (i == 2 || i == 3)
+            if (i == 2 || i == 4)
                 PosicionesNaves.Add(PosicionNaveActualY);
         }
     }
@@ -295,7 +295,7 @@ void ANaveEnemigoNodriza::DestruirNave()
 {
     const float Amplitud = 5.0f;
     const float Frecuencia = 4.0f;
-    const float ReturnSpeed = GetVelocidad(); // Velocidad de retorno ajustable según sea necesario
+    const float ReturnSpeed = GetVelocidad(); 
     const float DeltaTime = GetWorld()->GetDeltaSeconds();
     if (tipoMovimiento == "Movimiento 1")
     {
@@ -309,7 +309,7 @@ void ANaveEnemigoNodriza::DestruirNave()
             const FVector ReturnMovement = FVector(0, 1, 0) * ReturnSpeed * DeltaTime;
             SetActorLocationAndRotation(GetActorLocation() + ReturnMovement, FRotator(0, 90, 0));
 
-            // Llama a esta función nuevamente en el siguiente fotograma
+            
             GetWorldTimerManager().SetTimerForNextTick([this]() {DestruirNave(); });
         }
     }
@@ -335,14 +335,14 @@ void ANaveEnemigoNodriza::posicionesIniciales(int g)
     FRotator TargetRotation = ReturnDirection.Rotation();
 
     // Interpola gradualmente la rotación actual de la nave hacia la rotación objetivo
-    const float RotationInterpSpeed = 5.0f; // Velocidad de interpolación de rotación ajustable según sea necesario
+    const float RotationInterpSpeed = 5.0f; 
     FRotator NewRotation = FMath::RInterpTo(NavesEnemigas[g]->GetActorRotation(), TargetRotation, GetWorld()->GetDeltaSeconds(), RotationInterpSpeed);
 
     // Aplica la nueva rotación a la nave
     NavesEnemigas[g]->SetActorRotation(NewRotation);
 
     // Mueve la nave en la dirección de regreso a la posición inicial
-    const float ReturnSpeed = 900.0f; // Velocidad de retorno ajustable según sea necesario
+    const float ReturnSpeed = 800.0f; 
     const float DeltaTime = GetWorld()->GetDeltaSeconds();
     const FVector ReturnMovement = ReturnDirection * ReturnSpeed * DeltaTime;
 
@@ -352,7 +352,6 @@ void ANaveEnemigoNodriza::posicionesIniciales(int g)
     {
         // La nave está lo suficientemente cerca de la posición inicial, así que establece su posición y rotación exactamente en la posición inicial
         NavesEnemigas[g]->SetActorLocationAndRotation(PosicionesNaves[g], FRotator(0, 180, 0));
-     
     }
     else
     {
@@ -365,13 +364,14 @@ void ANaveEnemigoNodriza::posicionesIniciales(int g)
 }
 void ANaveEnemigoNodriza::AttachEscudoToNave(AEscudo* InEscudo)
 {
+    AEscudo* Escudo = Cast<AEscudo>(InEscudo);
     // Asegúrate de que el escudo exista
-    if (InEscudo)
+    if (Escudo)
     {
         // Almacena una referencia al escudo
-        escudo = InEscudo;
+        Escudo = InEscudo;
 
         // Adjunta el escudo a esta nave
-        escudo->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
+        Escudo->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
     }
 }
