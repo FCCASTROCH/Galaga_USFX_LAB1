@@ -71,6 +71,7 @@ TArray<FString >abastecimiento;
 //UPROPERTY(VisibleAnywhere, Category = "GameModeBase")
 
 class ADefensaDirector* DirectorNodriza;
+
 class ABNaveNodrizaConcreto* BNave1;
 class AConstructorNave* BNave;
 //clase adapter
